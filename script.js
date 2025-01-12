@@ -68,7 +68,7 @@ fetch('concordium.json')
         Arcane: ${character.sasia.arc}<br>
         Speed: ${character.sasia.spd}<br>
         Intelligence: ${character.sasia.int}<br>
-        Alignment: ${character.sasia.aln} (${alignment})
+        Alignment: ${character.sasia.aln}
        `;
 
       // Append everything to the character container
