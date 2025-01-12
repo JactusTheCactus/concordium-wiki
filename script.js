@@ -55,8 +55,6 @@ fetch('concordium.json')
       epithet.classList.add('epithet');
       if (character.epithet && character.epithet !== "N/A") {
         epithet.innerHTML = `"${character.epithet}"<br>`;
-      } else {
-        epithet.innerHTML = `"No epithet available"<br>`;
       }
       
       const stats = document.createElement('div');
