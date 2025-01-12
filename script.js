@@ -42,7 +42,7 @@ fetch('concordium.json')
           "Imperatore": { "F": "Imperatora", "M": "Imperator" },
           "Venatorium": { "F": "Venatrix", "M": "Venator"},
           "Ferratorium": { "F": "Ferratrix", "M": "Ferrator"},
-          "Dominum": { "F": "Dominum", "M": "Dominus"},
+          "Dominum": { "F": "Domina", "M": "Dominus"},
           "Luminorium": { "F": "Luminora", "M": "Luminor"},
           "Exaltum": { "F": "Exalta", "M": "Exaltus"},
           "Bellatorium": { "F": "Bellatrix", "M": "Bellator"},
