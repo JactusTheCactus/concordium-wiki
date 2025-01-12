@@ -1,4 +1,6 @@
 
+# The Seven Deadly Sins
+
 
 ## Invidia Imperatora, Gorgon Sin of Envy
 - **Weapon**: Staff
@@ -43,6 +45,8 @@
 
 **Description**:
 Growing up at the mercy of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath, she sought to find every abuser of power, and reduce them to a crater in the ground.
+# The Seven Heavenly Virtues
+
 
 ## Caritas Ferratrix,  Virtue of Charity
 

@@ -60,16 +60,22 @@ for key, value in data.items():
     output += power
     output += species
     output += description
-    if sin_ != "n" and alignment == "Sin":
+    if alignment == "Sin":
         if firstSin:
-            markdown += sinTitle
+            if sin_ != "n".lower:
+                markdown += sinTitle
+            README += sinTitle
             firstSin = False
-        markdown += output
-    if virtue_ != "n" and alignment == "Virtue":
+        if sin_ != "n":
+            markdown += output
+    if alignment == "Virtue":
         if firstVirtue:
-            markdown += virtueTitle
+            if virtue_ != "n".lower():
+                markdown += virtueTitle
+            README += virtueTitle
             firstVirtue = False
-        markdown += output
+        if virtue_ != "n":
+            markdown += output
     README += output
 with open('markdown/concordium.md', 'w') as md_file:
     md_file.write(markdown)
