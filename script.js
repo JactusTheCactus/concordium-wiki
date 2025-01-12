@@ -48,7 +48,7 @@ fetch('concordium.json')
           "Dominum": { "F": "Dominum", "M": "Dominus"},
           "Luminorium": { "F": "Luminora", "M": "Luminor"},
           "Exaltum": { "F": "Exalta", "M": "Exaltus"},
-          "Bellatorium": { "F": "Venatrix", "M": "Venator"},
+          "Bellatorium": { "F": "Bellatrix", "M": "Bellator"},
         };
         if (rankMap[character.rank]) {return rankMap[character.rank][character.sex] || character.rank;}
         return character.rank;
