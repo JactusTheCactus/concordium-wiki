@@ -56,10 +56,10 @@ fetch('concordium.json')
       
       const stats = document.createElement('div');
       stats.innerHTML = `
-        ${character.weapon}<br>
-        ${character.colour}<br>
-        ${character.power}<br>
-        ${character.species}<br>
+        Weapon: ${character.weapon}<br>
+        Gear Colour: ${character.colour}<br>
+        Power: ${character.power}<br>
+        Species: ${character.species}<br>
         Strength: ${character.sasia.str}<br>
         Arcane: ${character.sasia.arc}<br>
         Speed: ${character.sasia.spd}<br>
