@@ -1,17 +1,22 @@
 import json
 
-def json_to_variables(json_file):
+def json_to_custom_strings(json_file, custom_template):
     # Load the JSON data
     with open(json_file, 'r') as f:
         data = json.load(f)
+    
+    # Iterate through each character
     for character, attributes in data.items():
-        for key, value in attributes.items():
-            globals()[f"{character}.{key}"] = value
-            
-    print("Variables created successfully.")
+        # Dynamically unpack the keys and values into the custom template
+        try:
+            print(custom_template.format(character=character, **attributes))
+        except KeyError as e:
+            print(f"Missing key {e} in the data for character {character}. Skipping.")
 
-json_to_variables('concordium.json')
+# Example usage
+custom_string_template = (
+    "{character} wields a {Weapon} and has the power of {Power}. "
+    "They are aligned as a {Alignment} and their rank is {Rank}."
+)
 
-# You can now use the variables like:
-# For example, if a character has "name" as a key, you can access it as:
-# print(Character.name)
+json_to_custom_strings('data.json', custom_string_template)
