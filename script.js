@@ -17,9 +17,11 @@ fetch('concordium.json')
 
       const stats = document.createElement('div');
       stats.innerHTML = `
-        <p>str: ${character.sasia.str}</p>
-        <p>spd: ${character.sasia.spd}</p>
-        <p>aln: ${character.sasia.aln}</p>
+        <p>STR: ${character.sasia.str}</p>
+        <p>AGL: ${character.sasia.agl}</p>
+        <p>SPD: ${character.sasia.spd}</p>
+        <p>INT: ${character.sasia.int}</p>
+        <p>ALN: ${character.sasia.aln}</p>
       `;
 
       // Append everything to the character container
