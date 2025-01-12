@@ -19,7 +19,7 @@ fetch('concordium.json')
         alignment = `Sin`
       }
       else if (character.sasia.aln < 0) {
-        alignment = `Sin`
+        alignment = `Virtue`
       }
       else {
         alignment = `Neutral`
