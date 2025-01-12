@@ -62,11 +62,11 @@ for key, value in data.items():
     output += description
     if alignment == "Sin":
         if firstSin:
-            if sin_ != "n".lower:
+            if sin_ != "n".lower():
                 markdown += sinTitle
             README += sinTitle
             firstSin = False
-        if sin_ != "n":
+        if sin_ != "n".lower():
             markdown += output
     if alignment == "Virtue":
         if firstVirtue:
@@ -74,7 +74,7 @@ for key, value in data.items():
                 markdown += virtueTitle
             README += virtueTitle
             firstVirtue = False
-        if virtue_ != "n":
+        if virtue_ != "n".lower():
             markdown += output
     README += output
 with open('markdown/concordium.md', 'w') as md_file:
