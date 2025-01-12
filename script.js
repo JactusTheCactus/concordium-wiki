@@ -25,13 +25,11 @@ fetch('concordium.json')
         alignment = `Neutral`
       }
 
+      function sex(character) {return character.rank === "Imperatore" ? (character.sex === "F" ? "Imperatora" : (character.sex === "M" ? "Imperator" : character.rank)) : character.rank;}
+
       const stats = document.createElement('div');
       stats.innerHTML = `
-        ${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}`
-      stats.innerHTML += `
-        "${character.epithet}"<br>
-      `;
-      stats.innerHTML += `
+        ${character.name} ${sex(character.rank)}, ${character.animal} ${character.alignment} of ${character.aspect}
         ${character.weapon}<br>
         ${character.colour}<br>
         ${character.power}<br>
