@@ -68,13 +68,12 @@ fetch('concordium.json')
         Gear Colour: ${character.colour}<br>
         Power: ${character.power}<br>
         Species: ${character.species}<br>
-      `;
-      stats.innerHTML += `
-         Strength: ${character.sasia.str}<br>
-         Arcane: ${character.sasia.arc}<br>
-         Speed: ${character.sasia.spd}<br>
-         Intelligence: ${character.sasia.int}<br>
-         Alignment: ${character.sasia.aln} (${alignment})
+        <br>S.A.S.I.A. Scale:<br>
+        Strength: ${character.sasia.str}<br>
+        Arcane: ${character.sasia.arc}<br>
+        Speed: ${character.sasia.spd}<br>
+        Intelligence: ${character.sasia.int}<br>
+        Alignment: ${character.sasia.aln} (${alignment})
        `;
 
       // Append everything to the character container
