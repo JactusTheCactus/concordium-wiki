@@ -52,9 +52,11 @@ for key, value in data.items():
         return rank
     title = f"""
 
-## {name} {gender(rank,sex)}, {animal} {alignment} of {aspect}"""
+## {name} {gender(rank,sex)}"""
     output = title
     output += epithet
+    output += ifNone(animal,"Mark")
+    output += ifNone(aspect,alignment)
     output += weapon
     output += colour
     output += power

@@ -2,46 +2,60 @@
 # The Seven Deadly Sins
 
 
-## Invidia Imperatora, Gorgon Sin of Envy
+## Invidia Imperatora
+- **Mark**: Gorgon
+- **Sin**: Envy
 - **Weapon**: Staff
 - **Colour**: Blue
 - **Power**: Mimicry
 - **Species**: Changeling
 
-## Gula Venator, Hydra Sin of Gluttony
+## Gula Venator
+- **Mark**: Hydra
+- **Sin**: Gluttony
 - **Weapon**: Battleaxe
 - **Colour**: Purple
 - **Power**: Power Absorption
 
-## Avaritia Ferrator, Dragon Sin of Greed
+## Avaritia Ferrator
+- **Mark**: Dragon
+- **Sin**: Greed
 - **Weapon**: Warhammer
 - **Colour**: Green
 - **Power**: Ferrokinesis
 
-## Luxuria Domina, Siren Sin of Lust
+## Luxuria Domina
+- **Mark**: Siren
+- **Sin**: Lust
 - **Weapon**: Daggers
 - **Colour**: Pink
 - **Power**: Illusion
 - **Species**: Faerie
 
-## Superbia Luminora, Phoenix Sin of Pride
+## Superbia Luminora
+- **Mark**: Phoenix
+- **Sin**: Pride
 - **Weapon**: Sword
 - **Colour**: Yellow
 - **Power**: Resurrective Self-Immolation
 - **Species**: Elf
 
-## Acedia Exaltus, Sphinx Sin of Sloth
+## Acedia Exaltus
+- **Mark**: Sphinx
+- **Sin**: Sloth
 - **Weapon**: Mace
 - **Colour**: Orange
 - **Power**: Paralysis
 - **Species**: Golem
 
-## Ira Bellatrix, Kraken Sin of Wrath
+## Ira Bellatrix
 - **Epithet**: The Chainbreaker
+- **Mark**: Kraken
+- **Sin**: Wrath
 - **Weapon**: Chain-Whip
 - **Colour**: Red
 - **Power**: Strength
 - **Species**: Demon
 
 **Description**:
-Growing up at the mercy of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath, she sought to find every abuser of power, and reduce them to a crater in the ground.
+Growing up at the mercy of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After serving her thousand year sentence as the Sin of Wrath, she sought to find every abuser of power, and reduce them to little more than a crater in the ground.
