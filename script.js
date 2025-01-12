@@ -56,9 +56,9 @@ fetch('concordium.json')
       
       const stats = document.createElement('div');
       stats,innerHTML = ``
-      if (character.epithet != `""<br>`) {
+      if (character.epithet != `""`) {
         stats.innerHTML += `
-        "${character.epithet}"
+        "${character.epithet}"<br>
       `
       }
       stats.innerHTML += `
