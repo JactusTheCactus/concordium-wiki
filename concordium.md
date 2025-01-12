@@ -1,8 +1,6 @@
-# envy
+# Invidia (Envy)
 
-- **Name**: Invidia
 - **Animal**: Gorgon
-- **Aspect**: Envy
 - **Weapon**: Staff
 - **Colour**: Blue
 - **Power**: Mimic
@@ -11,15 +9,11 @@
 - **Rank**: Imperatore
 - **Alignment**: Sin
 - **Inverse**: kindness
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
+- **Epithet**: None
 
-# gluttony
+    # Gula (Gluttony)
 
-- **Name**: Gula
 - **Animal**: Hydra
-- **Aspect**: Gluttony
 - **Weapon**: Battleaxe
 - **Colour**: Purple
 - **Power**: Absorption
@@ -28,15 +22,11 @@
 - **Rank**: Venatorium
 - **Alignment**: Sin
 - **Inverse**: temperance
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
+- **Epithet**: None
 
-# greed
+    # Avaritia (Greed)
 
-- **Name**: Avaritia
 - **Animal**: Dragon
-- **Aspect**: Greed
 - **Weapon**: Warhammer
 - **Colour**: Green
 - **Power**: Ferrokinesis
@@ -45,15 +35,11 @@
 - **Rank**: Ferratorium
 - **Alignment**: Sin
 - **Inverse**: charity
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
+- **Epithet**: None
 
-# lust
+    # Luxuria (Lust)
 
-- **Name**: Luxuria
 - **Animal**: Siren
-- **Aspect**: Lust
 - **Weapon**: Daggers
 - **Colour**: Pink
 - **Power**: Illusion
@@ -62,15 +48,11 @@
 - **Rank**: Dominum
 - **Alignment**: Sin
 - **Inverse**: chastity
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
+- **Epithet**: None
 
-# pride
+    # Superbia (Pride)
 
-- **Name**: Superbia
 - **Animal**: Phoenix
-- **Aspect**: Pride
 - **Weapon**: Sword
 - **Colour**: Yellow
 - **Power**: Immolation
@@ -79,15 +61,11 @@
 - **Rank**: Luminorium
 - **Alignment**: Sin
 - **Inverse**: humility
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
+- **Epithet**: None
 
-# sloth
+    # Acedia (Sloth)
 
-- **Name**: Acedia
 - **Animal**: Sphinx
-- **Aspect**: Sloth
 - **Weapon**: Mace
 - **Colour**: Orange
 - **Power**: Paralysis
@@ -96,15 +74,11 @@
 - **Rank**: Exaltum
 - **Alignment**: Sin
 - **Inverse**: diligence
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
+- **Epithet**: None
 
-# wrath
+    # Ira (Wrath)
 
-- **Name**: Ira
 - **Animal**: Kraken
-- **Aspect**: Wrath
 - **Weapon**: Chain-Whip
 - **Colour**: Red
 - **Power**: Apocalyptic-Strength
@@ -114,14 +88,10 @@
 - **Alignment**: Sin
 - **Inverse**: patience
 - **Epithet**: The Chainbreaker
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': -6}
 
-# charity
+    # Caritas (Charity)
 
-- **Name**: Caritas
 - **Animal**: 
-- **Aspect**: Charity
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -130,15 +100,11 @@
 - **Rank**: Ferratorium
 - **Alignment**: Virtue
 - **Inverse**: greed
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
-# chastity
+    # Castitas (Chastity)
 
-- **Name**: Castitas
 - **Animal**: 
-- **Aspect**: Chastity
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -147,15 +113,11 @@
 - **Rank**: Bellatorium
 - **Alignment**: Virtue
 - **Inverse**: lust
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
-# diligence
+    # Diligentia (Diligence)
 
-- **Name**: Diligentia
 - **Animal**: 
-- **Aspect**: Diligence
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -164,15 +126,11 @@
 - **Rank**: Venatorium
 - **Alignment**: Virtue
 - **Inverse**: sloth
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
-# kindness
+    # Humanitas (Kindness)
 
-- **Name**: Humanitas
 - **Animal**: 
-- **Aspect**: Kindness
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -181,15 +139,11 @@
 - **Rank**: Luminorium
 - **Alignment**: Virtue
 - **Inverse**: envy
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
-# humility
+    # Humilitas (Humility)
 
-- **Name**: Humilitas
 - **Animal**: 
-- **Aspect**: Humility
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -198,15 +152,11 @@
 - **Rank**: Exaltum
 - **Alignment**: Virtue
 - **Inverse**: pride
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
-# patience
+    # Patientia (Patience)
 
-- **Name**: Patientia
 - **Animal**: 
-- **Aspect**: Patience
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -215,15 +165,11 @@
 - **Rank**: Imperatore
 - **Alignment**: Virtue
 - **Inverse**: wrath
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
-# temperance
+    # Temperantia (Temperance)
 
-- **Name**: Temperantia
 - **Animal**: 
-- **Aspect**: Temperance
 - **Weapon**: 
 - **Colour**: 
 - **Power**: 
@@ -232,7 +178,6 @@
 - **Rank**: Dominum
 - **Alignment**: Virtue
 - **Inverse**: gluttony
-- **Epithet**: 
-- **Description**: 
-- **Sasia**: {'str': 0, 'arc': 0, 'spd': 0, 'int': 0, 'aln': 6}
+- **Epithet**: None
 
+    
