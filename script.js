@@ -15,6 +15,9 @@ fetch('concordium.json')
       const description = document.createElement('p');
       description.textContent = character.description;
 
+      const epithet = document.createElement('p');
+      epithet.classList.add('epithet');
+
       if (character.sasia.aln > 0) {
         alignment = `Sin`
       }
@@ -55,10 +58,10 @@ fetch('concordium.json')
       }      
       
       const stats = document.createElement('div');
-      stats,innerHTML = ``
+      epithet.innerHTML = ``
       if (character.epithet != `N/A`) {
         stats.innerHTML += `
-        <epithet><b>"${character.epithet}"</epithet><br>
+        "${character.epithet}"<br>
       `
       }
       stats.innerHTML += `
@@ -77,6 +80,7 @@ fetch('concordium.json')
 
       // Append everything to the character container
       characterContainer.appendChild(name);
+      characterContainer.appendChild(epithet);
       characterContainer.appendChild(description);
       characterContainer.appendChild(stats);
 
