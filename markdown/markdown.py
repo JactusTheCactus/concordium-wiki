@@ -22,6 +22,9 @@ virtueTitle = """
 ## The Seven Heavenly Virtues
 """
 docTitle = f"""
+# __The Concordium__
+
+__The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 7 of these Holy Knights betrayed the others, framing them for _high treason against the kingdom_, and sentencing them for a millenium. with this sentencing, the betrayed Holy Knights, now called __The Seven Deadly Sins__, were further punished with __The Capital Curses__, from the remnants of _The Old Gods_. The other half of __The Concordium__ called themselves __The Seven Heavenly Virtues__, and continued selling their false tale of the Sins' betrayal.
 """
 sin_ = input("Sins? Y/n ")
 virtue_ = input("Virtues? Y/n ")
@@ -30,7 +33,7 @@ for key, value in data.items():
     animal = value.get("animal", "")
     aspect = value.get("aspect", "")
     weapon = ifNone(value.get("weapon", ""),"Weapon")
-    colour = ifNone(value.get("colour", ""),"Colour")
+    colour = value.get("colour", "")
     power = ifNone(value.get("power", ""),"Power")
     species = ifNone(value.get("species", ""),"Species")
     sex = value.get("sex", "")
@@ -59,10 +62,9 @@ for key, value in data.items():
 ### {name} {gender(rank,sex)}"""
     output = title
     output += epithet
-    output += ifNone(animal,mark)
+    output += ifNone(f"The {mark} of the {colour} {animal}",mark)
     output += ifNone(aspect,alignment)
     output += weapon
-    output += colour
     output += power
     output += species
     output += description
