@@ -3,6 +3,8 @@ fetch('concordium.json')
   .then(data => {
     // Loop through the object keys
     Object.keys(data).forEach(key => {
+      const character = data[key]; // Access the character object using the key
+
       // Dynamically create HTML elements for each character
       const characterContainer = document.createElement('div');
       characterContainer.classList.add('character'); // Add a class for styling
@@ -15,9 +17,9 @@ fetch('concordium.json')
 
       const stats = document.createElement('div');
       stats.innerHTML = `
-        <p>Strength: ${character.sasia.str}</p>
-        <p>Speed: ${character.sasia.spd}</p>
-        <p>Alignment: ${character.sasia.aln}</p>
+        <p>Strength: ${character.sasia.strength}</p>
+        <p>Speed: ${character.sasia.speed}</p>
+        <p>Alignment: ${character.sasia.alignment}</p>
       `;
 
       // Append everything to the character container
@@ -29,3 +31,4 @@ fetch('concordium.json')
       document.getElementById('character-list').appendChild(characterContainer);
     });
   })
+  .catch(error => console.error('Error loading JSON:', error));
