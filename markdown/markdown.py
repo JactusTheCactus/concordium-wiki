@@ -13,6 +13,14 @@ def ifNone(item,label):
         return item
 markdown = ""
 README = ""
+firstSin = True
+sinTitle = """
+# The Seven Deadly Sins
+"""
+firstVirtue = True
+virtueTitle = """
+# The Seven Heavenly Virtues
+"""
 sin_ = input("Sins? Y/n ")
 virtue_ = input("Virtues? Y/n ")
 for key, value in data.items():
@@ -44,7 +52,7 @@ for key, value in data.items():
         return rank
     title = f"""
 
-# {name} {gender(rank,sex)}, {animal} {alignment} of {aspect}"""
+## {name} {gender(rank,sex)}, {animal} {alignment} of {aspect}"""
     output = title
     output += epithet
     output += weapon
@@ -52,7 +60,15 @@ for key, value in data.items():
     output += power
     output += species
     output += description
-    if (sin_ != "n" and alignment == "Sin") or (virtue_ != "n" and alignment == "Virtue"):
+    if sin_ != "n" and alignment == "Sin":
+        if firstSin:
+            markdown += sinTitle
+            firstSin = False
+        markdown += output
+    if virtue_ != "n" and alignment == "Virtue":
+        if firstVirtue:
+            markdown += virtueTitle
+            firstVirtue = False
         markdown += output
     README += output
 with open('markdown/concordium.md', 'w') as md_file:

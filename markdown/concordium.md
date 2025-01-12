@@ -1,40 +1,42 @@
 
+# The Seven Deadly Sins
 
-# Invidia Imperatora, Gorgon Sin of Envy
+
+## Invidia Imperatora, Gorgon Sin of Envy
 - **Weapon**: Staff
 - **Colour**: Blue
 - **Power**: Mimicry
 - **Species**: Changeling
 
-# Gula Venator, Hydra Sin of Gluttony
+## Gula Venator, Hydra Sin of Gluttony
 - **Weapon**: Battleaxe
 - **Colour**: Purple
 - **Power**: Power Absorption
 
-# Avaritia Ferrator, Dragon Sin of Greed
+## Avaritia Ferrator, Dragon Sin of Greed
 - **Weapon**: Warhammer
 - **Colour**: Green
 - **Power**: Ferrokinesis
 
-# Luxuria Domina, Siren Sin of Lust
+## Luxuria Domina, Siren Sin of Lust
 - **Weapon**: Daggers
 - **Colour**: Pink
 - **Power**: Illusion
 - **Species**: Faerie
 
-# Superbia Luminora, Phoenix Sin of Pride
+## Superbia Luminora, Phoenix Sin of Pride
 - **Weapon**: Sword
 - **Colour**: Yellow
 - **Power**: Resurrective Self-Immolation
 - **Species**: Elf
 
-# Acedia Exaltus, Sphinx Sin of Sloth
+## Acedia Exaltus, Sphinx Sin of Sloth
 - **Weapon**: Mace
 - **Colour**: Orange
 - **Power**: Paralysis
 - **Species**: Golem
 
-# Ira Bellatrix, Kraken Sin of Wrath
+## Ira Bellatrix, Kraken Sin of Wrath
 - **Epithet**: The Chainbreaker
 - **Weapon**: Chain-Whip
 - **Colour**: Red
