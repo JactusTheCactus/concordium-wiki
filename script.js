@@ -27,8 +27,11 @@ fetch('concordium.json')
 
       const stats = document.createElement('div');
       stats.innerHTML = `
-        ${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}
+        ${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}`
+      stats.innerHTML += `
         "${character.epithet}"<br>
+      `;
+      stats.innerHTML += `
         ${character.weapon}<br>
         ${character.colour}<br>
         ${character.power}<br>
