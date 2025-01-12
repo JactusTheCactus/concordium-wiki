@@ -17,11 +17,11 @@ fetch('concordium.json')
 
       const stats = document.createElement('div');
       stats.innerHTML = `
-        <p>STR: ${character.sasia.str}</p>
-        <p>ARC: ${character.sasia.arc}</p>
-        <p>SPD: ${character.sasia.spd}</p>
-        <p>INT: ${character.sasia.int}</p>
-        <p>ALN: ${character.sasia.aln}</p>
+        <p>Strength: ${character.sasia.str}</p>
+        <p>Arcane: ${character.sasia.arc}</p>
+        <p>Speed: ${character.sasia.spd}</p>
+        <p>Intelligence: ${character.sasia.int}</p>
+        <p>Alignment: ${character.sasia.aln}</p>
       `;
 
       // Append everything to the character container
