@@ -25,6 +25,10 @@ fetch('concordium.json')
         alignment = `Neutral`
       }
 
+      if (character.species === "") {
+        character.species = `N/A`
+      }
+
       function sex(character) {
         const rankMap = {
           "Imperatore": { "F": "Imperatora", "M": "Imperator" },
