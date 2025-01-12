@@ -1,8 +1,8 @@
 fetch('concordium.json')
   .then(response => response.json()) // Parse the response as JSON
   .then(data => {
-    // Assuming your JSON is an array of characters, loop through them
-    data.forEach(character => {
+    // Loop through the object keys
+    Object.keys(data).forEach(key => {
       // Dynamically create HTML elements for each character
       const characterContainer = document.createElement('div');
       characterContainer.classList.add('character'); // Add a class for styling
@@ -29,6 +29,3 @@ fetch('concordium.json')
       document.getElementById('character-list').appendChild(characterContainer);
     });
   })
-  .catch(error => {
-    console.error('Error loading JSON:', error);
-  });
