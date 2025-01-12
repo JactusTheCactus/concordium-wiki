@@ -15,13 +15,23 @@ fetch('concordium.json')
       const description = document.createElement('p');
       description.textContent = character.description;
 
+      if (character.sasia.aln > 0) {
+        alignment = `Sin`
+      }
+      else if (character.sasia.aln < 0) {
+        alignment = `Sin`
+      }
+      else {
+        alignment = `Neutral`
+      }
+
       const stats = document.createElement('div');
       stats.innerHTML = `
         <p>Strength: ${character.sasia.str}</p>
         <p>Arcane: ${character.sasia.arc}</p>
         <p>Speed: ${character.sasia.spd}</p>
         <p>Intelligence: ${character.sasia.int}</p>
-        <p>Alignment: ${character.sasia.aln}</p>
+        <p>Alignment: ${character.sasia.aln} (${alignment})</p>
       `;
 
       // Append everything to the character container
