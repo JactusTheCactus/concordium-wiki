@@ -15,9 +15,6 @@ fetch('concordium.json')
       const description = document.createElement('p');
       description.textContent = character.description;
 
-      const epithet = document.createElement('p');
-      epithet.classList.add('epithet');
-
       if (character.sasia.aln > 0) {
         alignment = `Sin`
       }
@@ -55,15 +52,18 @@ fetch('concordium.json')
         };
         if (rankMap[character.rank]) {return rankMap[character.rank][character.sex] || character.rank;}
         return character.rank;
-      }      
-      
-      const stats = document.createElement('div');
+      }
+
+      const epithet = document.createElement('p');
+      epithet.classList.add('epithet');
       epithet.innerHTML = ``
       if (character.epithet != `N/A`) {
         stats.innerHTML += `
         "${character.epithet}"<br>
       `
       }
+      
+      const stats = document.createElement('div');
       stats.innerHTML += `
         Weapon: ${character.weapon}<br>
         Gear Colour: ${character.colour}<br>
