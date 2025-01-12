@@ -55,17 +55,18 @@ fetch('concordium.json')
       }      
       
       const stats = document.createElement('div');
-      stats.innerHTML = `
+      stats,innerHTML = ``
+      if (character.epithet != `""<br>`) {
+        stats.innerHTML += `
+        "${character.epithet}"
+      `
+      }
+      stats.innerHTML += `
         Weapon: ${character.weapon}<br>
         Gear Colour: ${character.colour}<br>
         Power: ${character.power}<br>
         Species: ${character.species}<br>
       `;
-      if (character.epithet != `""`) {
-        stats.innerHTML += `
-        "${character.epithet}"
-      `
-      }
       stats.innerHTML += `
          Strength: ${character.sasia.str}<br>
          Arcane: ${character.sasia.arc}<br>
