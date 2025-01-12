@@ -22,7 +22,6 @@ virtueTitle = """
 ## The Seven Heavenly Virtues
 """
 docTitle = f"""
-# 
 """
 sin_ = input("Sins? Y/n ")
 virtue_ = input("Virtues? Y/n ")
