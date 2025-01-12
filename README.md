@@ -3,7 +3,7 @@
 
 
 ## Invidia Imperatora
-- **Mark**: Gorgon
+- **Curse**: Gorgon
 - **Sin**: Envy
 - **Weapon**: Staff
 - **Colour**: Blue
@@ -11,21 +11,21 @@
 - **Species**: Changeling
 
 ## Gula Venator
-- **Mark**: Hydra
+- **Curse**: Hydra
 - **Sin**: Gluttony
 - **Weapon**: Battleaxe
 - **Colour**: Purple
 - **Power**: Power Absorption
 
 ## Avaritia Ferrator
-- **Mark**: Dragon
+- **Curse**: Dragon
 - **Sin**: Greed
 - **Weapon**: Warhammer
 - **Colour**: Green
 - **Power**: Ferrokinesis
 
 ## Luxuria Domina
-- **Mark**: Siren
+- **Curse**: Siren
 - **Sin**: Lust
 - **Weapon**: Daggers
 - **Colour**: Pink
@@ -33,7 +33,7 @@
 - **Species**: Faerie
 
 ## Superbia Luminora
-- **Mark**: Phoenix
+- **Curse**: Phoenix
 - **Sin**: Pride
 - **Weapon**: Sword
 - **Colour**: Yellow
@@ -41,7 +41,7 @@
 - **Species**: Elf
 
 ## Acedia Exaltus
-- **Mark**: Sphinx
+- **Curse**: Sphinx
 - **Sin**: Sloth
 - **Weapon**: Mace
 - **Colour**: Orange
@@ -50,7 +50,7 @@
 
 ## Ira Bellatrix
 - **Epithet**: The Chainbreaker
-- **Mark**: Kraken
+- **Curse**: Kraken
 - **Sin**: Wrath
 - **Weapon**: Chain-Whip
 - **Colour**: Red

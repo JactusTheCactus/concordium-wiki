@@ -34,6 +34,8 @@ for key, value in data.items():
     sex = value.get("sex", "")
     rank = value.get("rank", "")
     alignment = value.get("alignment", "")
+    if alignment == "Sin": mark = "Curse"
+    elif alignment == "Virtue": mark = "Blessing"
     epithet = ifNone(value.get("epithet", ""),"Epithet")
     description = ifNone(value.get("description", ""),"Description")
 
@@ -55,7 +57,7 @@ for key, value in data.items():
 ## {name} {gender(rank,sex)}"""
     output = title
     output += epithet
-    output += ifNone(animal,"Mark")
+    output += ifNone(animal,mark)
     output += ifNone(aspect,alignment)
     output += weapon
     output += colour
