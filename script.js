@@ -10,7 +10,7 @@ fetch('concordium.json')
       characterContainer.classList.add('character'); // Add a class for styling
 
       const name = document.createElement('h2');
-      name.textContent = `${character.name} (${character.rank})`;
+      name.textContent = `${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}`;
 
       const description = document.createElement('p');
       description.textContent = character.description;
@@ -41,7 +41,6 @@ fetch('concordium.json')
       
       const stats = document.createElement('div');
       stats.innerHTML = `
-        ${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}
         ${character.weapon}<br>
         ${character.colour}<br>
         ${character.power}<br>
