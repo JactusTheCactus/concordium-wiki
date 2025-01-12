@@ -18,7 +18,7 @@ fetch('concordium.json')
       const stats = document.createElement('div');
       stats.innerHTML = `
         <p>STR: ${character.sasia.str}</p>
-        <p>AGL: ${character.sasia.agi}</p>
+        <p>ARC: ${character.sasia.arc}</p>
         <p>SPD: ${character.sasia.spd}</p>
         <p>INT: ${character.sasia.int}</p>
         <p>ALN: ${character.sasia.aln}</p>
