@@ -58,7 +58,7 @@ fetch('concordium.json')
       stats,innerHTML = ``
       if (character.epithet != `N/A`) {
         stats.innerHTML += `
-        <b>"${character.epithet}"</b><br>
+        <epithet><b>"${character.epithet}"</epithet><br>
       `
       }
       stats.innerHTML += `
