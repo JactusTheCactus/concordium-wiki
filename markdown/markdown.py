@@ -54,7 +54,7 @@ for key, value in data.items():
     output += description
     if (sin_ != "n" and alignment == "Sin") or (virtue_ != "n" and alignment == "Virtue"):
         markdown += output
-    markdown += README
+    README += output
 with open('markdown/concordium.md', 'w') as md_file:
     md_file.write(markdown)
 with open('README.md', 'w') as md_file:
