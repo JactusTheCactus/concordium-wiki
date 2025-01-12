@@ -55,9 +55,9 @@ fetch('concordium.json')
       }
 
       const epithet = document.createElement('p');
-      // epithet.classList.add('epithet');
+      epithet.classList.add('epithet');
       if (character.epithet != `N/A`) {
-        stats.innerHTML = `
+        epithet.innerHTML = `
         "${character.epithet}"<br>
       `
       }
