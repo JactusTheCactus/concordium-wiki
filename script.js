@@ -54,8 +54,8 @@ fetch('concordium.json')
         return character.rank;
       }
 
-      const epithet = document.createElement('div');
-      epithet.classList.add('epithet');
+      const epithet = document.createElement('p');
+      // epithet.classList.add('epithet');
       if (character.epithet != `N/A`) {
         stats.innerHTML = `
         "${character.epithet}"<br>
