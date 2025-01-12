@@ -1,8 +1,10 @@
 
-# The Seven Deadly Sins
+# Test
+
+## The Seven Deadly Sins
 
 
-## Invidia Imperatora
+### Invidia Imperatora
 - **Curse**: Gorgon
 - **Sin**: Envy
 - **Weapon**: Staff
@@ -10,21 +12,21 @@
 - **Power**: Mimicry
 - **Species**: Changeling
 
-## Gula Venator
+### Gula Venator
 - **Curse**: Hydra
 - **Sin**: Gluttony
 - **Weapon**: Battleaxe
 - **Colour**: Purple
 - **Power**: Power Absorption
 
-## Avaritia Ferrator
+### Avaritia Ferrator
 - **Curse**: Dragon
 - **Sin**: Greed
 - **Weapon**: Warhammer
 - **Colour**: Green
 - **Power**: Ferrokinesis
 
-## Luxuria Domina
+### Luxuria Domina
 - **Curse**: Siren
 - **Sin**: Lust
 - **Weapon**: Daggers
@@ -32,7 +34,7 @@
 - **Power**: Illusion
 - **Species**: Faerie
 
-## Superbia Luminora
+### Superbia Luminora
 - **Curse**: Phoenix
 - **Sin**: Pride
 - **Weapon**: Sword
@@ -40,7 +42,7 @@
 - **Power**: Resurrective Self-Immolation
 - **Species**: Elf
 
-## Acedia Exaltus
+### Acedia Exaltus
 - **Curse**: Sphinx
 - **Sin**: Sloth
 - **Weapon**: Mace
@@ -48,7 +50,7 @@
 - **Power**: Paralysis
 - **Species**: Golem
 
-## Ira Bellatrix
+### Ira Bellatrix
 - **Epithet**: The Chainbreaker
 - **Curse**: Kraken
 - **Sin**: Wrath

@@ -1,8 +1,10 @@
 
-# The Seven Deadly Sins
+# Test
+
+## The Seven Deadly Sins
 
 
-## Invidia Imperatora
+### Invidia Imperatora
 - **Curse**: Gorgon
 - **Sin**: Envy
 - **Weapon**: Staff
@@ -10,21 +12,21 @@
 - **Power**: Mimicry
 - **Species**: Changeling
 
-## Gula Venator
+### Gula Venator
 - **Curse**: Hydra
 - **Sin**: Gluttony
 - **Weapon**: Battleaxe
 - **Colour**: Purple
 - **Power**: Power Absorption
 
-## Avaritia Ferrator
+### Avaritia Ferrator
 - **Curse**: Dragon
 - **Sin**: Greed
 - **Weapon**: Warhammer
 - **Colour**: Green
 - **Power**: Ferrokinesis
 
-## Luxuria Domina
+### Luxuria Domina
 - **Curse**: Siren
 - **Sin**: Lust
 - **Weapon**: Daggers
@@ -32,7 +34,7 @@
 - **Power**: Illusion
 - **Species**: Faerie
 
-## Superbia Luminora
+### Superbia Luminora
 - **Curse**: Phoenix
 - **Sin**: Pride
 - **Weapon**: Sword
@@ -40,7 +42,7 @@
 - **Power**: Resurrective Self-Immolation
 - **Species**: Elf
 
-## Acedia Exaltus
+### Acedia Exaltus
 - **Curse**: Sphinx
 - **Sin**: Sloth
 - **Weapon**: Mace
@@ -48,7 +50,7 @@
 - **Power**: Paralysis
 - **Species**: Golem
 
-## Ira Bellatrix
+### Ira Bellatrix
 - **Epithet**: The Chainbreaker
 - **Curse**: Kraken
 - **Sin**: Wrath
@@ -59,26 +61,26 @@
 
 **Description**:
 Growing up under the boot of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath for a thousand years, then being cursed with The Curse of The Kraken upon her release, she sought to find every abuser of power and reduce them to little more than a crater in the ground.
-# The Seven Heavenly Virtues
+## The Seven Heavenly Virtues
 
 
-## Caritas Ferratrix
+### Caritas Ferratrix
 - **Virtue**: Charity
 
-## Castitas Bellator
+### Castitas Bellator
 - **Virtue**: Chastity
 
-## Diligentia Venator
+### Diligentia Venator
 - **Virtue**: Diligence
 
-## Humanitas Luminora
+### Humanitas Luminora
 - **Virtue**: Kindness
 
-## Humilitas Exaltus
+### Humilitas Exaltus
 - **Virtue**: Humility
 
-## Patientia Imperator
+### Patientia Imperator
 - **Virtue**: Patience
 
-## Temperantia Domina
+### Temperantia Domina
 - **Virtue**: Temperance

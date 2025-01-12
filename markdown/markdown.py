@@ -15,11 +15,14 @@ markdown = ""
 README = ""
 firstSin = True
 sinTitle = """
-# The Seven Deadly Sins
+## The Seven Deadly Sins
 """
 firstVirtue = True
 virtueTitle = """
-# The Seven Heavenly Virtues
+## The Seven Heavenly Virtues
+"""
+docTitle = f"""
+# Test
 """
 sin_ = input("Sins? Y/n ")
 virtue_ = input("Virtues? Y/n ")
@@ -54,7 +57,7 @@ for key, value in data.items():
         return rank
     title = f"""
 
-## {name} {gender(rank,sex)}"""
+### {name} {gender(rank,sex)}"""
     output = title
     output += epithet
     output += ifNone(animal,mark)
@@ -64,6 +67,9 @@ for key, value in data.items():
     output += power
     output += species
     output += description
+    if firstSin and firstVirtue:
+        markdown += docTitle
+        README += docTitle
     if alignment == "Sin":
         if firstSin:
             if sin_ != "n".lower():
