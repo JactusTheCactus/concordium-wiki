@@ -27,7 +27,13 @@ fetch('concordium.json')
 
       function sex(character) {
         const rankMap = {
-          "Imperatore": { "F": "Imperatora", "M": "Imperator" }
+          "Imperatore": { "F": "Imperatora", "M": "Imperator" },
+          "Venatorium": { "F": "Venatrix", "M": "Venator"},
+          "Ferratorium": { "F": "Ferratrix", "M": "Ferrator"},
+          "Dominum": { "F": "Dominum", "M": "Dominus"},
+          "Luminorium": { "F": "Luminora", "M": "Luminor"},
+          "Exaltum": { "F": "Exalta", "M": "Exaltus"},
+          "Bellatorium": { "F": "Venatrix", "M": "Venator"},
         };
         if (rankMap[character.rank]) {return rankMap[character.rank][character.sex] || character.rank;}
         return character.rank;
@@ -35,7 +41,7 @@ fetch('concordium.json')
       
       const stats = document.createElement('div');
       stats.innerHTML = `
-        ${character.name} ${sex(character.rank)}, ${character.animal} ${character.alignment} of ${character.aspect}
+        ${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}
         ${character.weapon}<br>
         ${character.colour}<br>
         ${character.power}<br>
