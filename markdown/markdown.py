@@ -1,8 +1,6 @@
 import json
-
 with open('./concordium.json', 'r') as f:
     data = json.load(f)
-
 markdown = ""
 for key, value in data.items():
     name = value.get("name", "")
@@ -17,7 +15,6 @@ for key, value in data.items():
     alignment = value.get("alignment", "")
     inverse = value.get("inverse", "")
     epithet = value.get("epithet", "")
-
     def gender(rank, sex):
         rank_map = {
             "Imperatore": {"F": "Imperatora", "M": "Imperator"},
@@ -31,7 +28,6 @@ for key, value in data.items():
         if rank in rank_map:
             return rank_map[rank].get(sex, rank)
         return rank
-
     def ifNone(item,label):
         if item != "":
             item = f"""
@@ -41,8 +37,6 @@ for key, value in data.items():
 
 # {name} {gender(rank,sex)}, {animal} {alignment} of {aspect}
 """
-    
-
     output = title
     output += ifNone(epithet,"Epithet")
     output += ifNone(weapon,"Weapon")
@@ -52,6 +46,5 @@ for key, value in data.items():
     output += ifNone(sex,"Sex")
     output += ifNone(inverse,"Inverse")
     markdown += output
-
 with open('markdown/concordium.md', 'w') as md_file:
     md_file.write(markdown)
