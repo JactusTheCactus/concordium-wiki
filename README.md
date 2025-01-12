@@ -58,7 +58,7 @@
 - **Species**: Demon
 
 **Description**:
-Growing up at the mercy of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After serving her thousand year sentence as the Sin of Wrath, she sought to find every abuser of power, and reduce them to little more than a crater in the ground.
+Growing up under the boot of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath for a thousand years, then being cursed with The Curse of The Kraken upon her release, she sought to find every abuser of power and reduce them to little more than a crater in the ground.
 # The Seven Heavenly Virtues
 
 
