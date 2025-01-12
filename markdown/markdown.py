@@ -12,6 +12,7 @@ def ifNone(item,label):
 {item}"""
         return item
 markdown = ""
+README = ""
 sin_ = input("Sins? Y/n ")
 virtue_ = input("Virtues? Y/n ")
 for key, value in data.items():
@@ -53,5 +54,8 @@ for key, value in data.items():
     output += description
     if (sin_ != "n" and alignment == "Sin") or (virtue_ != "n" and alignment == "Virtue"):
         markdown += output
+    markdown += README
 with open('markdown/concordium.md', 'w') as md_file:
     md_file.write(markdown)
+with open('README.md', 'w') as md_file:
+    md_file.write(README)
