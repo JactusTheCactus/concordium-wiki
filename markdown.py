@@ -15,8 +15,8 @@ def json_to_custom_strings(json_file, custom_template):
 
 # Example usage
 custom_string_template = (
-    "{character} wields a {Weapon} and has the power of {Power}. "
-    "They are aligned as a {Alignment} and their rank is {Rank}."
+    "{character} wields a {weapon} and has the power of {power}. "
+    "They are aligned as a {alignment} and their rank is {rank}."
 )
 
-json_to_custom_strings('data.json', custom_string_template)
+json_to_custom_strings('concordium.json', custom_string_template)
