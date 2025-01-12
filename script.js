@@ -16,10 +16,10 @@ fetch('concordium.json')
       description.textContent = character.description;
 
       if (character.sasia.aln > 0) {
-        alignment = `Sin`
+        alignment = `Virtue`
       }
       else if (character.sasia.aln < 0) {
-        alignment = `Virtue`
+        alignment = `Sin`
       }
       else {
         alignment = `Neutral`
