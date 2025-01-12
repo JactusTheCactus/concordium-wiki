@@ -25,17 +25,20 @@ fetch('concordium.json')
         alignment = `Neutral`
       }
 
-      // Loop through all keys in the character object
-      for (let key in character) {
-        if (character.hasOwnProperty(key)) {
-          // Check if the value is an empty string
-          if (character[key] === "") {
-            // Replace with "N/A"
-            character[key] = "N/A";
+      function checkEmpty(character) {
+        // Loop through all keys in the character object
+        for (let key in character) {
+          if (character.hasOwnProperty(key)) {
+            // Check if the value is an empty string
+            if (character[key] === "") {
+              // Replace with "N/A"
+              character[key] = "N/A";
+            }
           }
         }
+        return character;
       }
-      return character;   
+      checkEmpty(character);
 
       function sex(character) {
         const rankMap = {
