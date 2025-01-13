@@ -15,6 +15,9 @@ def ifNone(item,label):
     else: out = ""
     return out
 markdown = ""
+sinMD = ""
+virtueMD = ""
+concordiumMD = ""
 README = ""
 firstSin = True
 sinTitle = """## The Seven Deadly Sins
@@ -69,27 +72,26 @@ for key, value in data.items():
     output += ifSpecies
     output += speciesDef
     output += ifDescription
-    if firstSin and firstVirtue:
-        markdown += docTitle
-        README += docTitle
     if alignment == "Sin":
         if firstSin:
-            if sin_:
-                markdown += sinTitle
-            README += sinTitle
+            sinMD += sinTitle
             firstSin = False
-        if sin_:
-            markdown += output
+        sinMD += output
     if alignment == "Virtue":
         if firstVirtue:
-            if virtue_:
-                markdown += virtueTitle
-            README += virtueTitle
+            virtueMD += virtueTitle
             firstVirtue = False
-        if virtue_:
-            markdown += output
-    README += output
-    with open('markdown/concordium.md', 'w') as md_file:
-        md_file.write(markdown)
-    with open('README.md', 'w') as md_file:
-        md_file.write(README)
+        virtueMD += output
+concordiumMD = f"""{docTitle}
+{sinMD}
+{virtueMD}"""
+sinMD = f"""{docTitle}
+{sinMD}"""
+virtueMD = f"""{docTitle}
+{virtueMD}"""
+with open('markdown/sin.md', 'w') as md_file:
+    md_file.write(sinMD)
+with open('markdown/virtue.md', 'w') as md_file:
+    md_file.write(virtueMD)
+with open('README.md', 'w') as md_file:
+    md_file.write(concordiumMD)

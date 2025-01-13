@@ -1,5 +1,6 @@
 # __The Concordium__
 __The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 7 of these Holy Knights betrayed the others, framing them for _high treason against the kingdom_, and sentencing them for a millenium. with this sentencing, the betrayed Holy Knights, now called __The Seven Deadly Sins__, were further punished with __The Capital Curses__, from _The Blood of The Dead Gods_. The other half of __The Concordium__ called themselves __The Seven Heavenly Virtues__, and continued selling their false tale of the Sins' betrayal.
+
 ## The Seven Deadly Sins
 ### Invidia Imperatora
 - __Curse__: The Curse of the Blue Gorgon
@@ -43,6 +44,7 @@ __The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 
 - __Power__: Strength
 - __Description__:
     - Growing up under the boot of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath for a thousand years, then being cursed with The Curse of The Kraken upon her release, she sought to find every abuser of power and reduce them to little more than a crater in the ground.
+
 ## The Seven Heavenly Virtues
 ### Caritas Ferratrix
 - __Blessing__: The Blessing of the  
