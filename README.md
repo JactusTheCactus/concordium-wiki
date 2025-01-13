@@ -52,7 +52,6 @@ __The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 
 - **Sin**: Wrath
 - **Weapon**: Chain-Whip
 - **Power**: Strength
-- **Species**: Demon
 
 **Description**:
 Growing up under the boot of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath for a thousand years, then being cursed with The Curse of The Kraken upon her release, she sought to find every abuser of power and reduce them to little more than a crater in the ground.
