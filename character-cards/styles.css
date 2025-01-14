@@ -1,6 +1,7 @@
 /* Flexbox Container */
 .flex-container {
   display: flex; /* Enable Flexbox */
+  flex-direction: column;
   flex-wrap: wrap; /* Allow items to wrap into multiple rows */
   justify-content: space-between; /* Space items evenly horizontally */
   align-items: flex-start; /* Align items to the top */
