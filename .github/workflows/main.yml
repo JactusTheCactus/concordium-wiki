@@ -1,0 +1,36 @@
+name: Sync concordium.json
+
+# Trigger the workflow on changes to the main branch of the `concordium-data` repository
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the main repository
+        uses: actions/checkout@v2
+
+      - name: Checkout concordium-data repository
+        uses: actions/checkout@v2
+        with:
+          repository: jactusthecactus/concordium-data  # Replace with your username and repo name
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: concordium-data  # Where to store the checked-out repo
+
+      - name: Copy concordium.json to main repo
+        run: |
+          cp concordium-data/concordium.json concordium.json  # Replace with correct path
+          git add concordium-data/concordium.json
+          git commit -m "Sync concordium.json from concordium-data"
+          git push origin main
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git commit -m "Update concordium.json"
+          git push origin main
