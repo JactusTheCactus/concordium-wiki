@@ -1,7 +1,7 @@
 /* Flexbox Container */
 .flex-container {
   display: flex; /* Enable Flexbox */
-  flex-direction: row; /* Arrange items horizontally (default) */
+  flex-direction: column; /* Arrange items horizontally (default) */
   justify-content: space-around; /* Space items evenly */
   align-items: center; /* Center items vertically */
   height: 100vh; /* Full viewport height */
