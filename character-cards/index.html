@@ -4,41 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flexbox Demo</title>
-  <style>
-    /* Container */
-    .flex-container {
-      display: flex;
-      flex-direction: row; /* Horizontal layout */
-      justify-content: space-between; /* Distribute items evenly */
-      align-items: center; /* Align items vertically */
-      height: 200px; /* Height of the container */
-      background-color: #f0f0f0; /* Light gray background */
-      padding: 10px; /* Add some padding */
-      border: 2px solid #ccc; /* Add a border */
-    }
-
-    /* Items */
-    .flex-item {
-      background-color: #4caf50; /* Green background */
-      color: white; /* White text */
-      padding: 20px; /* Space inside the box */
-      margin: 5px; /* Space outside the box */
-      border-radius: 8px; /* Rounded corners */
-      text-align: center; /* Center the text */
-      flex: 1; /* Allow items to grow equally */
-    }
-
-    /* Different sizes for visual variety */
-    .flex-item:nth-child(2) {
-      flex: 2; /* Make the second item take up twice as much space */
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <div class="flex-container">
     <div class="flex-item">Item 1</div>
     <div class="flex-item">Item 2</div>
     <div class="flex-item">Item 3</div>
   </div>
+
 </body>
 </html>
