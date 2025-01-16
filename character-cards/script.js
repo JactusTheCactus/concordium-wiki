@@ -3,14 +3,13 @@ fetch('data.json')
   .then(data => {
     const pairsContainer = document.getElementById('pairs-container');
     const processed = new Set(); // Keep track of processed characters
-
     // Function to create a character div
     function createCharacterDiv(character, type) {
       const div = document.createElement('div');
       div.classList.add(type); // 'sin' or 'virtue'
       div.innerHTML = `
-        <h3>name: ${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
-        <p>"${character.epithet}"</p>
+        <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
+        <p>${character.epithet}</p>
       `;
       return div;
     }
