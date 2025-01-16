@@ -46,7 +46,7 @@
   box-sizing: border-box; /* Include padding and margin in width calculation */
 }
 .flex-sin-subtitle {
-  background-color: #f04040;
+  background-color: #f02020;
   color: white;
   padding: 20px;
   margin: 10px;
@@ -58,7 +58,7 @@
   box-sizing: border-box; /* Include padding and margin in width calculation */
 }
 .flex-virtue-subtitle {
-  background-color: #8080f0;
+  background-color: #2020f0;
   color: white;
   padding: 20px;
   margin: 10px;
