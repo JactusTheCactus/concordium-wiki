@@ -46,7 +46,7 @@
   box-sizing: border-box; /* Include padding and margin in width calculation */
 }
 .flex-subtitle {
-  background-color: #008080;
+  background-color: #800080;
   color: white;
   padding: 20px;
   margin: 10px;
