@@ -9,7 +9,7 @@ fetch('data.json')
       const div = document.createElement('div');
       div.classList.add(type); // 'sin' or 'virtue'
       div.innerHTML = `
-        <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
+        <h3>name: ${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
         <p>"${character.epithet}"</p>
       `;
       return div;
