@@ -4,6 +4,17 @@ fetch('data.json')
     const pairsContainer = document.getElementById('pairs-container');
     const processed = new Set(); // Keep track of processed characters
 
+    // Function to create a character div
+    function createCharacterDiv(character, type) {
+      const div = document.createElement('div');
+      div.classList.add(type); // 'sin' or 'virtue'
+      div.innerHTML = `
+        <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
+        <p>"${character.epithet}"</p>
+      `;
+      return div;
+    }
+
     for (const key in data) {
       const character = data[key];
       if (processed.has(key)) continue; // Skip already processed characters
@@ -16,28 +27,13 @@ fetch('data.json')
       const rowDiv = document.createElement('div');
       rowDiv.classList.add('flex-row');
 
-      // Create elements for the sin and virtue
-      const sinDiv = document.createElement('div');
-      sinDiv.classList.add('sin');
-      sinDiv.innerHTML = `
-        <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
-        <p>"${character.epithet}"</p>
-      `;
-
-      const virtueDiv = document.createElement('div');
-      virtueDiv.classList.add('virtue');
-      virtueDiv.innerHTML = `
-        <h3>${inverseCharacter.name} ${inverseCharacter.rank}, ${inverseCharacter.animal} ${inverseCharacter.alignment} of ${inverseCharacter.aspect}</h3>
-        <p>"${inverseCharacter.epithet}"</p>
-      `;
-
-      // Append both to the row
+      // Determine alignment to position appropriately
       if (character.alignment.toLowerCase() === 'sin') {
-        rowDiv.appendChild(sinDiv);
-        rowDiv.appendChild(virtueDiv);
+        rowDiv.appendChild(createCharacterDiv(character, 'sin'));
+        rowDiv.appendChild(createCharacterDiv(inverseCharacter, 'virtue'));
       } else {
-        rowDiv.appendChild(virtueDiv);
-        rowDiv.appendChild(sinDiv);
+        rowDiv.appendChild(createCharacterDiv(inverseCharacter, 'sin'));
+        rowDiv.appendChild(createCharacterDiv(character, 'virtue'));
       }
 
       // Add row to container
