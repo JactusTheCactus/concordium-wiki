@@ -16,31 +16,21 @@ body {
   margin-bottom: 20px;
 }
 
-/* Flex columns for sins and virtues */
+/* Flex rows for pairs */
 .flex-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flex-row {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-.flex-column {
-  flex: 1;
-}
-
-.flex-sin-subtitle, .flex-virtue-subtitle {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Items styling */
-.flex-items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .sin, .virtue {
+  flex: 1;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
