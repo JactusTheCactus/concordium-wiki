@@ -20,15 +20,13 @@ fetch('data.json')
       const sinDiv = document.createElement('div');
       sinDiv.classList.add('sin');
       sinDiv.innerHTML = `
-        <h3>${character.name} ${character.rank}</h3>
-        <p><strong>Aspect:</strong> ${character.aspect}</p>
+        <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
       `;
 
       const virtueDiv = document.createElement('div');
       virtueDiv.classList.add('virtue');
       virtueDiv.innerHTML = `
-        <h3>${inverseCharacter.name} ${inverseCharacter.rank}</h3>
-        <p><strong>Aspect:</strong> ${inverseCharacter.aspect}</p>
+        <h3>${inverseCharacter.name} ${inverseCharacter.rank}, ${inverseCharacter.animal} ${inverseCharacter.alignment} of ${inverseCharacter.aspect}</h3>
       `;
 
       // Append both to the row
