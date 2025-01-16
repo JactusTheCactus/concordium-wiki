@@ -1,37 +1,58 @@
+/* General container styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
 .flex-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
+  padding: 20px;
 }
 
 .flex-title {
   font-size: 2rem;
-  font-weight: bold;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Flex columns for sins and virtues */
+.flex-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.flex-column {
+  flex: 1;
 }
 
 .flex-sin-subtitle, .flex-virtue-subtitle {
   font-size: 1.5rem;
-  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
+/* Items styling */
 .flex-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sin, .virtue {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .sin {
   background-color: #ffe6e6;
-  border: 1px solid #ffcccc;
-  padding: 1rem;
-  border-radius: 8px;
+  border-color: #ffcccc;
 }
 
 .virtue {
   background-color: #e6ffe6;
-  border: 1px solid #ccffcc;
-  padding: 1rem;
-  border-radius: 8px;
+  border-color: #ccffcc;
 }
