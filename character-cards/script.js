@@ -5,8 +5,8 @@ fetch('data.json')
     const flexContainer = document.querySelector('.flex-container');
 
     // Separate sins and virtues
-    const sins = data.filter(item => item.alignment === 'sin');
-    const virtues = data.filter(item => item.alignment === 'virtue');
+    const sins = data.filter(item => item.alignment === 'Sin');
+    const virtues = data.filter(item => item.alignment === 'Virtue');
 
     // Add sins to the container
     sins.forEach(sin => {
