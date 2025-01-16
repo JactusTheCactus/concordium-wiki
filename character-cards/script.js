@@ -11,6 +11,7 @@ fetch('data.json')
         <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
         <p><b>${character.epithet}</b></p>
         <li>Weapon: ${character.weapon}</li>
+        <li>Gear Colour: ${character.colour}</li>
       `;
       return div;
     }
