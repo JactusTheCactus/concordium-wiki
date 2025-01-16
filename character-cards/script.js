@@ -10,10 +10,10 @@ fetch('data.json')
       div.innerHTML = `
         <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
         <p><b>${character.epithet}</b></p>
-        <li>Weapon: ${character.weapon}</li>
-        <li>Gear Colour: ${character.colour}</li>
-        <li>Power: ${character.power}</li>
-        <li>Species: ${character.species}</li>
+        <li>Weapon: <u>${character.weapon}</u></li>
+        <li>Gear Colour: <u>${character.colour}</u></li>
+        <li>Power: <u>${character.power}</u></li>
+        <li>Species: <u>${character.species}</u></li>
       `;
       return div;
     }
