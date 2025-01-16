@@ -1,27 +1,33 @@
-// Fetch JSON data
+// Assuming the JSON is saved as 'data.json'
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
-    const flexContainer = document.querySelector('.flex-container');
+    const sinsContainer = document.getElementById('sins');
+    const virtuesContainer = document.getElementById('virtues');
 
-    // Separate sins and virtues
-    const sins = data.filter(item => item.alignment === 'Sin');
-    const virtues = data.filter(item => item.alignment === 'Virtue');
+    // Iterate over each key in the JSON object
+    for (const key in data) {
+      const character = data[key];
+      const characterDiv = document.createElement('div');
+      characterDiv.classList.add(character.alignment.toLowerCase()); // Add 'sin' or 'virtue' as class
+      characterDiv.innerHTML = `
+        <h3>${character.name}</h3>
+        <p><strong>Aspect:</strong> ${character.aspect}</p>
+        <p><strong>Animal:</strong> ${character.animal || 'N/A'}</p>
+        <p><strong>Weapon:</strong> ${character.weapon || 'N/A'}</p>
+        <p><strong>Power:</strong> ${character.power || 'N/A'}</p>
+        <p><strong>Rank:</strong> ${character.rank}</p>
+        <p><strong>Alignment:</strong> ${character.alignment}</p>
+        <p><strong>Epithet:</strong> ${character.epithet || 'N/A'}</p>
+        <p><strong>Description:</strong> ${character.description || 'N/A'}</p>
+      `;
 
-    // Add sins to the container
-    sins.forEach(sin => {
-      const sinDiv = document.createElement('div');
-      sinDiv.classList.add('flex-sin');
-      sinDiv.textContent = sin.name;
-      flexContainer.appendChild(sinDiv);
-    });
-
-    // Add virtues to the container
-    virtues.forEach(virtue => {
-      const virtueDiv = document.createElement('div');
-      virtueDiv.classList.add('flex-virtue');
-      virtueDiv.textContent = virtue.name;
-      flexContainer.appendChild(virtueDiv);
-    });
+      // Append to the appropriate container
+      if (character.alignment.toLowerCase() === 'sin') {
+        sinsContainer.appendChild(characterDiv);
+      } else if (character.alignment.toLowerCase() === 'virtue') {
+        virtuesContainer.appendChild(characterDiv);
+      }
+    }
   })
-  .catch(error => console.error('Error fetching JSON:', error));
+  .catch(error => console.error('Error loading JSON:', error));
