@@ -12,6 +12,8 @@ fetch('data.json')
         <p><b>${character.epithet}</b></p>
         <li>Weapon: ${character.weapon}</li>
         <li>Gear Colour: ${character.colour}</li>
+        <li>Power: ${character.power}</li>
+        <li>Species: ${character.species}</li>
       `;
       return div;
     }
