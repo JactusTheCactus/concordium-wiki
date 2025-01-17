@@ -7,9 +7,18 @@ fetch('data.json')
     function createCharacterDiv(character, type) {
       const div = document.createElement('div');
       div.classList.add(type); // 'sin' or 'virtue'
-      function getRank(sex) {
-        const rankDictionary = {
-        }
+      function sex(character) {
+        const rankMap = {
+          "Imperatore": { "F": "Imperatora", "M": "Imperator" },
+          "Venatorium": { "F": "Venatrix", "M": "Venator"},
+          "Ferratorium": { "F": "Ferratrix", "M": "Ferrator"},
+          "Dominum": { "F": "Domina", "M": "Dominus"},
+          "Luminorium": { "F": "Luminora", "M": "Luminor"},
+          "Exaltum": { "F": "Exalta", "M": "Exaltus"},
+          "Bellatorium": { "F": "Bellatrix", "M": "Bellator"},
+        };
+        if (rankMap[character.rank]) {return rankMap[character.rank][character.sex] || character.rank;}
+        return character.rank;
       }
       div.innerHTML = `
         <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
