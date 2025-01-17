@@ -55,6 +55,6 @@ body {
 }
 
 .description {
-  max-width: 95vw; /* Adjust width as needed */
-  text-align: justify;
+  max-width: 95vw;
+  text-align: left;
 }
