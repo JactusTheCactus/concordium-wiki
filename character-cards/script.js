@@ -62,7 +62,7 @@ fetch('data.json')
       }
 
       // Add markdown entry for the character
-      const markdownEntry = `- **${character.name}** (${character.alignment} of ${character.aspect})`;
+      const markdownEntry = div.innerHTML;
       markdownContent += markdownEntry + '\n';
 
       return div;
