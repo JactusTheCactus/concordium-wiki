@@ -7,6 +7,10 @@ fetch('data.json')
     function createCharacterDiv(character, type) {
       const div = document.createElement('div');
       div.classList.add(type); // 'sin' or 'virtue'
+      if (character.alignment === "Sin") {team = `The Seven Deadly Sins`}
+      else if (character.alignment === "Virtue") {team = `The Seven Heavenly Virtues`}
+      if (character.rank === "Imperatore") {job = `, Captain of ${team}`}
+      else {job = ""}
       function sex(character) {
         const rankMap = {
           "Imperatore": { "F": "Imperatora", "M": "Imperator" },
@@ -21,7 +25,7 @@ fetch('data.json')
         return character.rank;
       }
       div.innerHTML = `
-        <h3>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
+        <h3>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}${job}</h3>
       `;
       if (character.epithet !== "") {
       div.innerHTML += `
