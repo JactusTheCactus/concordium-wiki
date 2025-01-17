@@ -53,3 +53,8 @@ body {
   background-color: #e6ffe6;
   border-color: #ccffcc;
 }
+
+.description {
+  max-width: 95vw; /* Adjust width as needed */
+  text-align: justify;
+}
