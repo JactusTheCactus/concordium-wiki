@@ -4,17 +4,15 @@ fetch('data.json')
     const sinsList = document.getElementById('sins-list');
     const virtuesList = document.getElementById('virtues-list');
 
-    for (const key in data) {
-      const character = data[key];
+    Object.values(data).forEach(character => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `${character.name} (${character.animal})`;
+
       if (character.alignment === "Sin") {
-        const li = document.createElement('li');
-        li.innerHTML = `${character.name} (${character.animal})`;
-        sinsList.appendChild(li);
+        sinsList.appendChild(listItem);
       } else if (character.alignment === "Virtue") {
-        const li = document.createElement('li');
-        li.innerHTML = `${character.name} (${character.animal})`;
-        virtuesList.appendChild(li);
+        virtuesList.appendChild(listItem);
       }
-    }
+    });
   })
   .catch(error => console.error('Error loading JSON:', error));
