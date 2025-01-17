@@ -9,7 +9,7 @@ fetch('data.json')
       div.classList.add(type); // 'sin' or 'virtue'
       if (character.alignment === "Sin") {team = `The Seven Deadly Sins`}
       else if (character.alignment === "Virtue") {team = `The Seven Heavenly Virtues`}
-      if (character.rank === "Imperatore") {job = `, Captain of ${team}`}
+      if (character.rank === "Imperatore") {job = `, Captain of <u>${team}</u>`}
       else {job = ""}
       function sex(character) {
         const rankMap = {
