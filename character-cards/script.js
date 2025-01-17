@@ -13,6 +13,7 @@ fetch('data.json')
       if (character.epithet !== "") {
       div.innerHTML += `
         <p><b>"${character.epithet}"</b></p>
+      `;
       }
       div.innerHTML += `
         <li>Weapon: <u>${character.weapon}</u></li>
