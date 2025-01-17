@@ -7,6 +7,10 @@ fetch('data.json')
     function createCharacterDiv(character, type) {
       const div = document.createElement('div');
       div.classList.add(type); // 'sin' or 'virtue'
+      function getRank(sex) {
+        const rankDictionary = {
+        }
+      }
       div.innerHTML = `
         <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
       `;
