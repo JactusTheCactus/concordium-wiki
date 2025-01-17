@@ -9,7 +9,11 @@ fetch('data.json')
       div.classList.add(type); // 'sin' or 'virtue'
       div.innerHTML = `
         <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
-        <p><b>${character.epithet}</b></p>
+      `;
+      if (character.epithet !== "") {
+div.innerHTML += `
+        <p><b>"${character.epithet}"</b></p>
+}
         <li>Weapon: <u>${character.weapon}</u></li>
         <li>Gear Colour: <u>${character.colour}</u></li>
         <li>Power: <u>${character.power}</u></li>
