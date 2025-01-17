@@ -33,7 +33,7 @@ fetch('data.json')
       }
 
       div.innerHTML = `
-        <h3>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}${job}</h3>
+        <h3><i>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}${job}</i></h3>
       `;
       
       if (character.epithet !== "") {
