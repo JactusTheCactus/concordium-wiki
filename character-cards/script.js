@@ -21,7 +21,7 @@ fetch('data.json')
         return character.rank;
       }
       div.innerHTML = `
-        <h3>${character.name} ${character.rank}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
+        <h3>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}</h3>
       `;
       if (character.epithet !== "") {
       div.innerHTML += `
