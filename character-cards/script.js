@@ -114,13 +114,17 @@ fetch('data.json')
       }
     }
 
-    // Create download link
-    const downloadLink = document.createElement('a');
-    downloadLink.href = 'data:text/markdown;charset=utf-8,' + encodeURIComponent(markdownContent);
-    downloadLink.download = 'the_concordium.md';
-    downloadLink.textContent = 'Download The Concordium Markdown File';
-    
-    // Append download link to the body or a specific container
-    document.body.appendChild(downloadLink);
+    // Check if markdownContent has valid content
+    if (markdownContent.length > 0) {
+      const downloadLink = document.createElement('a');
+      downloadLink.href = 'data:text/markdown;charset=utf-8,' + encodeURIComponent(markdownContent);
+      downloadLink.download = 'the_concordium.md';
+      downloadLink.textContent = 'Download The Concordium Markdown File';
+
+      // Append download link to the body or a specific container
+      document.body.appendChild(downloadLink);
+    } else {
+      console.error("No valid markdown content generated.");
+    }
   })
   .catch(error => console.error('Error loading JSON:', error));
