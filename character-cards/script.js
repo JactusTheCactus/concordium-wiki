@@ -18,6 +18,7 @@ fetch('data.json')
       if (character.weapon !== "") {
       div.innerHTML += `
         <li>Weapon: <u>${character.weapon}</u></li>
+      `;
       }
       div.innerHTML += `
         <li>Gear Colour: <u>${character.colour}</u></li>
