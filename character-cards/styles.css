@@ -31,7 +31,7 @@ body {
   gap: 20px;
 }
 
-.sin, .virtue {
+.sin, .virtue, .neutral {
   flex: 1;
   padding: 10px;
   border-radius: 8px;
@@ -42,6 +42,11 @@ body {
 .sin {
   background-color: #ffe6e6;
   border-color: #ffcccc;
+}
+
+.neutral {
+  background-color: #ffffe6;
+  border-color: #ffffcc;
 }
 
 .virtue {
