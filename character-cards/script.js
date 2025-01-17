@@ -62,7 +62,7 @@ fetch('data.json')
       }
 
       // Add markdown entry for the character
-      const markdownEntry = div.innerHTML;
+      const markdownEntry = `- **${character.name}** (${character.alignment} of ${character.aspect})`;
       markdownContent += markdownEntry + '\n';
 
       return div;
@@ -114,17 +114,13 @@ fetch('data.json')
       }
     }
 
-    // Check if markdownContent has valid content
-    if (markdownContent.length > 0) {
-      const downloadLink = document.createElement('a');
-      downloadLink.href = 'data:text/markdown;charset=utf-8,' + encodeURIComponent(markdownContent);
-      downloadLink.download = 'the_concordium.md';
-      downloadLink.textContent = 'Download The Concordium Markdown File';
-
-      // Append download link to the body or a specific container
-      document.body.appendChild(downloadLink);
-    } else {
-      console.error("No valid markdown content generated.");
-    }
+    // Create download link
+    const downloadLink = document.createElement('a');
+    downloadLink.href = 'data:text/markdown;charset=utf-8,' + encodeURIComponent(markdownContent);
+    downloadLink.download = 'the_concordium.md';
+    downloadLink.textContent = 'Download The Concordium Markdown File';
+    
+    // Append download link to the body or a specific container
+    document.body.appendChild(downloadLink);
   })
   .catch(error => console.error('Error loading JSON:', error));
