@@ -20,12 +20,26 @@ fetch('data.json')
         <li>Weapon: <u>${character.weapon}</u></li>
       `;
       }
+      if (character.colour !== "") {
       div.innerHTML += `
         <li>Gear Colour: <u>${character.colour}</u></li>
+      `;
+      }
+      if (character.power !== "") {
+      div.innerHTML += `
         <li>Power: <u>${character.power}</u></li>
+      `;
+      }
+      if (character.species !== "") {
+      div.innerHTML += `
         <li>Species: <u>${character.species}</u></li>
+      `;
+      }
+      if (character.description !== "") {
+      div.innerHTML += `
         <p>${character.description}</p>
       `;
+      }
       return div;
     }
 
