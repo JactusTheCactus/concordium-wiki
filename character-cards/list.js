@@ -65,34 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Error loading JSON:', error));
 
-  // Generate PDF on button click
-  document.getElementById('download-pdf').addEventListener('click', () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+  // Generate download link
+  document.getElementById('download').addEventListener('click', () => {
+    const staticHTML = document.documentElement.outerHTML;
+    const blob = new Blob([staticHTML], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
 
-    // Use html2canvas with callback instead of .then()
-    html2canvas(document.body, {
-      onrendered: function (canvas) {
-        const imgData = canvas.toDataURL('image/png');
-        
-        // Calculate the page size based on canvas dimensions
-        const pageWidth = doc.internal.pageSize.getWidth();
-        const pageHeight = doc.internal.pageSize.getHeight();
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'concordium.html';
+    a.click();
 
-        // Scale the content to fit the page size
-        const canvasWidth = canvas.width;
-        const canvasHeight = canvas.height;
-        const scaleX = pageWidth / canvasWidth;
-        const scaleY = pageHeight / canvasHeight;
-        const scale = Math.min(scaleX, scaleY); // Use the smallest scale to fit the page
-
-        const imgWidth = canvasWidth * scale;
-        const imgHeight = canvasHeight * scale;
-
-        // Add image to PDF with adjusted dimensions
-        doc.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
-        doc.save('concordium.pdf'); // Save the PDF with the desired name
-      }
-    });
+    URL.revokeObjectURL(url);
   });
 });
