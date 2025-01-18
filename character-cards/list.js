@@ -68,41 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Generate PDF on button click
   document.getElementById('download-pdf').addEventListener('click', () => {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({
-      orientation: 'portrait',  // or 'landscape'
-      unit: 'mm',
-      format: 'a4',  // standard A4 size
-    });
+    const doc = new jsPDF();
 
-    // Use html2canvas to capture the page content
+    // Use html2canvas with callback instead of .then()
     html2canvas(document.body, {
-      scale: 2,  // Increase the scale for higher resolution
-      scrollX: 0,
-      scrollY: 0,
-      width: document.body.scrollWidth,  // Set width to the full content width
-      height: document.body.scrollHeight, // Set height to the full content height
-      x: 0,
-      y: 0
-    }).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      
-      // Adjust for page size and fit content
-      const pageHeight = doc.internal.pageSize.height;
-      const pageWidth = doc.internal.pageSize.width;
-
-      const imgWidth = pageWidth - 20; // Set image width with some padding
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-      // Add image to PDF with automatic scaling
-      let position = 10;
-      while (imgHeight > pageHeight) {
-        position += pageHeight;  // Add more pages if content exceeds the first page
-        imgHeight = (canvas.height * imgWidth) / canvas.width;
-        doc.addPage();
+      onrendered: function (canvas) {
+        const imgData = canvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 10, 10);
+        doc.save('concordium.pdf'); // Save the PDF with the desired name
       }
-
-      doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-      doc.save('concordium.pdf'); // Save the PDF
     });
   });
 });
