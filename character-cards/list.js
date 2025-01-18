@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (downloadButton && pdfButton) {
     // Add event listener for downloading the HTML page
     downloadButton.addEventListener('click', () => {
-      if (downloadButton.disabled) return; // Avoid multiple clicks
       console.log('Download HTML button clicked');
       const staticHTML = document.documentElement.outerHTML;
       const blob = new Blob([staticHTML], { type: 'text/html' });
@@ -13,21 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
       link.href = URL.createObjectURL(blob);
       link.download = 'concordium.html';
       link.click();
-      downloadButton.disabled = true; // Disable after clicking
     });
 
     // Add event listener for downloading as PDF
     pdfButton.addEventListener('click', () => {
-      if (pdfButton.disabled) return; // Avoid multiple clicks
       console.log('Download PDF button clicked');
       
       // Clone the document to avoid altering the original page
       const clonedDoc = document.documentElement.cloneNode(true);
 
       // Remove the 'Back' link and the buttons from the cloned document
-      clonedDoc.querySelector('a[href="index.html"]')?.remove();
-      clonedDoc.querySelector('#download-pdf')?.remove();
-      clonedDoc.querySelector('#download')?.remove();
+      const backLink = clonedDoc.querySelector('a[href="index.html"]');
+      const downloadBtn = clonedDoc.querySelector('#download-pdf');
+      const downloadHTMLBtn = clonedDoc.querySelector('#download');
+
+      // Remove the back link and download buttons
+      backLink?.remove();
+      downloadBtn?.remove();
+      downloadHTMLBtn?.remove();
 
       // Create a temporary hidden iframe to render the cleaned content
       const iframe = document.createElement('iframe');
@@ -48,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clean up the iframe
         iframe.remove();
       };
-      pdfButton.disabled = true; // Disable after clicking
     });
   } else {
     console.error('Download buttons not found!');
