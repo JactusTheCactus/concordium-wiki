@@ -65,19 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Error loading JSON:', error));
 
-  // Convert to PDF
-  document.getElementById('download-pdf').addEventListener('click', () => {
-    // Clone the document to avoid affecting the original page
+  // HTML Download
+  document.getElementById('download').addEventListener('click', () => {
     const clonedDoc = document.documentElement.cloneNode(true);
 
-    // Remove the back link and download button
+    // Remove the back link and download buttons
     clonedDoc.querySelector('a[href="index.html"]')?.remove();
+    clonedDoc.querySelector('#download')?.remove();
     clonedDoc.querySelector('#download-pdf')?.remove();
 
-    // Serialize the cleaned HTML
     const staticHTML = clonedDoc.outerHTML;
+    const blob = new Blob([staticHTML], { type: 'text/html' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'concordium.html';
+    a.click();
+  });
 
-    // Create a hidden iframe to render the static HTML
+  // PDF Download
+  document.getElementById('download-pdf').addEventListener('click', () => {
+    const clonedDoc = document.documentElement.cloneNode(true);
+
+    // Remove the back link and download buttons
+    clonedDoc.querySelector('a[href="index.html"]')?.remove();
+    clonedDoc.querySelector('#download')?.remove();
+    clonedDoc.querySelector('#download-pdf')?.remove();
+
     const iframe = document.createElement('iframe');
     iframe.style.position = 'fixed';
     iframe.style.width = '0';
@@ -85,15 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(iframe);
 
     iframe.contentDocument.open();
-    iframe.contentDocument.write(staticHTML);
+    iframe.contentDocument.write(clonedDoc.outerHTML);
     iframe.contentDocument.close();
 
-    // Wait for the iframe content to load before generating the PDF
     iframe.onload = () => {
-      const iframeWindow = iframe.contentWindow;
-      iframeWindow.html2pdf().from(iframe.contentDocument.body).save('concordium.pdf');
-
-      // Remove the iframe after generating the PDF
+      iframe.contentWindow.html2pdf().from(iframe.contentDocument.body).save('concordium.pdf');
       iframe.remove();
     };
   });
