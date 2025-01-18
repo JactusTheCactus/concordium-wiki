@@ -1,61 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const downloadButton = document.getElementById('download');
-  const pdfButton = document.getElementById('download-pdf');
-
-  if (downloadButton && pdfButton) {
-    // Add event listener for downloading the HTML page
-    downloadButton.addEventListener('click', () => {
-      console.log('Download HTML button clicked');
-      const staticHTML = document.documentElement.outerHTML;
-      const blob = new Blob([staticHTML], { type: 'text/html' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'concordium.html';
-      link.click();
-    });
-
-    // Add event listener for downloading as PDF
-    pdfButton.addEventListener('click', () => {
-      console.log('Download PDF button clicked');
-      
-      // Clone the document to avoid altering the original page
-      const clonedDoc = document.documentElement.cloneNode(true);
-
-      // Remove the 'Back' link and the buttons from the cloned document
-      const backLink = clonedDoc.querySelector('a[href="index.html"]');
-      const downloadBtn = clonedDoc.querySelector('#download-pdf');
-      const downloadHTMLBtn = clonedDoc.querySelector('#download');
-
-      // Remove the back link and download buttons
-      backLink?.remove();
-      downloadBtn?.remove();
-      downloadHTMLBtn?.remove();
-
-      // Create a temporary hidden iframe to render the cleaned content
-      const iframe = document.createElement('iframe');
-      iframe.style.position = 'fixed';
-      iframe.style.width = '0';
-      iframe.style.height = '0';
-      document.body.appendChild(iframe);
-
-      iframe.contentDocument.open();
-      iframe.contentDocument.write(clonedDoc.outerHTML);
-      iframe.contentDocument.close();
-
-      iframe.onload = () => {
-        console.log('Iframe loaded for PDF generation');
-        const iframeWindow = iframe.contentWindow;
-        iframeWindow.html2pdf().from(iframe.contentDocument.body).save('concordium.pdf');
-
-        // Clean up the iframe
-        iframe.remove();
-      };
-    });
-  } else {
-    console.error('Download buttons not found!');
-  }
-
-  // Load and process character data
   fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -65,32 +8,36 @@ document.addEventListener('DOMContentLoaded', () => {
       const captains = [];
       const nonCaptains = [];
 
+      // Process characters
       Object.values(data).forEach(character => {
         const div = document.createElement('div');
-        const team = character.alignment === "Sin" ? "The Seven Deadly Sins" : "The Seven Heavenly Virtues";
+        let team = character.alignment === "Sin" ? "The Seven Deadly Sins" : "The Seven Heavenly Virtues";
+
         const job = character.rank === "Imperatore" ? `, Captain of <u>${team}</u>` : "";
 
-        const rankMap = {
-          "Imperatore": { "F": "Imperatora", "M": "Imperator" },
-          "Venatorium": { "F": "Venatrix", "M": "Venator" },
-          "Ferratorium": { "F": "Ferratrix", "M": "Ferrator" },
-          "Dominum": { "F": "Domina", "M": "Dominus" },
-          "Luminorium": { "F": "Luminora", "M": "Luminor" },
-          "Exaltum": { "F": "Exalta", "M": "Exaltus" },
-          "Bellatorium": { "F": "Bellatrix", "M": "Bellator" },
-        };
-        const rank = rankMap[character.rank] ? rankMap[character.rank][character.sex] || character.rank : character.rank;
+        function sex(character) {
+          const rankMap = {
+            "Imperatore": { "F": "Imperatora", "M": "Imperator" },
+            "Venatorium": { "F": "Venatrix", "M": "Venator" },
+            "Ferratorium": { "F": "Ferratrix", "M": "Ferrator" },
+            "Dominum": { "F": "Domina", "M": "Dominus" },
+            "Luminorium": { "F": "Luminora", "M": "Luminor" },
+            "Exaltum": { "F": "Exalta", "M": "Exaltus" },
+            "Bellatorium": { "F": "Bellatrix", "M": "Bellator" },
+          };
+          return rankMap[character.rank] ? rankMap[character.rank][character.sex] || character.rank : character.rank;
+        }
 
         div.innerHTML = `
-          <h3><i>${character.name} ${rank}, ${character.animal} ${character.alignment} of ${character.aspect}${job}</i></h3>
+          <h3><i>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}${job}</i></h3>
         `;
 
-        if (character.epithet) div.innerHTML += `<p><b>"${character.epithet}"</b></p>`;
-        if (character.weapon) div.innerHTML += `<li>Weapon: <u>${character.weapon}</u></li>`;
-        if (character.colour) div.innerHTML += `<li>Gear Colour: <u>${character.colour}</u></li>`;
-        if (character.power) div.innerHTML += `<li>Power: <u>${character.power}</u></li>`;
-        if (character.species) div.innerHTML += `<li>Species: <u>${character.species}</u></li>`;
-        if (character.description) div.innerHTML += `<p>${character.description}</p>`;
+        if (character.epithet !== "") div.innerHTML += `<p><b>"${character.epithet}"</b></p>`;
+        if (character.weapon !== "") div.innerHTML += `<li>Weapon: <u>${character.weapon}</u></li>`;
+        if (character.colour !== "") div.innerHTML += `<li>Gear Colour: <u>${character.colour}</u></li>`;
+        if (character.power !== "") div.innerHTML += `<li>Power: <u>${character.power}</u></li>`;
+        if (character.species !== "") div.innerHTML += `<li>Species: <u>${character.species}</u></li>`;
+        if (character.description !== "") div.innerHTML += `<p>${character.description}</p>`;
 
         if (character.rank === "Imperatore") {
           captains.push(div);
@@ -99,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      // Append content
       captains.forEach(div => {
         if (div.querySelector('h3').innerText.includes("Sin")) {
           sinsList.appendChild(div);
@@ -116,4 +64,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     })
     .catch(error => console.error('Error loading JSON:', error));
+
+  // Generate PDF on button click
+  document.getElementById('download-pdf').addEventListener('click', () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Capture page content
+    const content = document.body.innerHTML;
+
+    // Remove unwanted elements like buttons (Download/Back)
+    const sanitizedContent = content.replace(/<button[^>]*>.*?<\/button>/g, '').replace(/<a[^>]*>.*?<\/a>/g, '');
+
+    // Add content to PDF
+    doc.html(sanitizedContent, {
+      callback: function (doc) {
+        doc.save('concordium.pdf'); // Save the PDF with the desired name
+      },
+      margin: [10, 10, 10, 10],
+      x: 10,
+      y: 10,
+    });
+  });
 });
