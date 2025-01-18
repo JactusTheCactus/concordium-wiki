@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Concordium - Sins and Virtues</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Include jsPDF library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Include html2pdf.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 </head>
 <body>
   <h1><u>The Concordium</u></h1>
@@ -28,38 +28,13 @@
 
   <script>
     function downloadPDF() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
+      // Select the content to be downloaded as PDF (including styles)
+      const element = document.body;
 
-      // Adding title
-      doc.setFontSize(22);
-      doc.text("The Concordium", 20, 20);
-
-      // Adding introductory paragraph
-      doc.setFontSize(12);
-      const introText = `The Concordium was a group of 14 Holy Knights, directly serving the King. 7 of these Holy Knights betrayed the others, framing them for high treason against the kingdom, and sentencing them for a millenium. With this sentencing, the betrayed Holy Knights, now called The Seven Deadly Sins, were further punished with The Capital Curses, from The Blood of The Dead Gods. The other half of The Concordium called themselves The Seven Heavenly Virtues, and continued selling their false tale of the Sins' betrayal.`;
-      doc.text(introText, 20, 30, { maxWidth: 170 });
-
-      // Adding Sins section
-      doc.setFontSize(18);
-      doc.text("Sins", 20, 80);
-
-      // Add content for Sins
-      const sinsContent = document.getElementById('sins-list').innerText;
-      doc.setFontSize(12);
-      doc.text(sinsContent, 20, 90, { maxWidth: 170 });
-
-      // Adding Virtues section
-      doc.setFontSize(18);
-      doc.text("Virtues", 20, 160);
-
-      // Add content for Virtues
-      const virtuesContent = document.getElementById('virtues-list').innerText;
-      doc.setFontSize(12);
-      doc.text(virtuesContent, 20, 170, { maxWidth: 170 });
-
-      // Save PDF
-      doc.save('the_concordium.pdf');
+      // Use html2pdf to generate PDF from the content with the styles intact
+      html2pdf()
+        .from(element)
+        .save('the_concordium.pdf');
     }
 
     fetch('data.json')
