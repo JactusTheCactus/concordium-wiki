@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Ensure buttons exist
+  const downloadButton = document.getElementById('download');
+  const pdfButton = document.getElementById('download-pdf');
+
+  if (!downloadButton || !pdfButton) {
+    console.error("Download buttons not found!");
+    return;
+  }
+
   fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -66,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error loading JSON:', error));
 
   // HTML Download
-  document.getElementById('download').addEventListener('click', () => {
+  downloadButton.addEventListener('click', () => {
     const clonedDoc = document.documentElement.cloneNode(true);
 
     // Remove the back link and download buttons
@@ -83,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // PDF Download
-  document.getElementById('download-pdf').addEventListener('click', () => {
+  pdfButton.addEventListener('click', () => {
     const clonedDoc = document.documentElement.cloneNode(true);
 
     // Remove the back link and download buttons
