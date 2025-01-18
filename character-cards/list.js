@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const downloadButton = document.getElementById('download');
   const pdfButton = document.getElementById('download-pdf');
 
+  console.log('Download Button:', downloadButton);
+  console.log('PDF Button:', pdfButton);
+
   if (!downloadButton || !pdfButton) {
     console.error("Download buttons not found!");
     return;
