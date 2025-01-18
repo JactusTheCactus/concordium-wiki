@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Ensure buttons exist
-  const downloadButton = document.getElementById('download');
-  const pdfButton = document.getElementById('download-pdf');
-
-  console.log('Download Button:', downloadButton);
-  console.log('PDF Button:', pdfButton);
-
-  if (!downloadButton || !pdfButton) {
-    console.error("Download buttons not found!");
-    return;
-  }
-
+  // Fetch and process data as before
   fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -74,48 +63,42 @@ document.addEventListener('DOMContentLoaded', () => {
           virtuesList.appendChild(div);
         }
       });
+
+      // Now we add the event listeners for the download buttons
+      const downloadButton = document.getElementById('download');
+      const pdfButton = document.getElementById('download-pdf');
+      console.log('Download Button:', downloadButton);
+      console.log('PDF Button:', pdfButton);
+
+      // Check if buttons exist
+      if (downloadButton && pdfButton) {
+        // Add download functionality here
+        pdfButton.addEventListener('click', () => {
+          const clonedDoc = document.documentElement.cloneNode(true);
+          clonedDoc.querySelector('a[href="index.html"]')?.remove();
+          clonedDoc.querySelector('#download-pdf')?.remove();
+          
+          const staticHTML = clonedDoc.outerHTML;
+          
+          const iframe = document.createElement('iframe');
+          iframe.style.position = 'fixed';
+          iframe.style.width = '0';
+          iframe.style.height = '0';
+          document.body.appendChild(iframe);
+          
+          iframe.contentDocument.open();
+          iframe.contentDocument.write(staticHTML);
+          iframe.contentDocument.close();
+          
+          iframe.onload = () => {
+            const iframeWindow = iframe.contentWindow;
+            iframeWindow.html2pdf().from(iframe.contentDocument.body).save('concordium.pdf');
+            iframe.remove();
+          };
+        });
+      } else {
+        console.log('Download buttons not found!');
+      }
     })
     .catch(error => console.error('Error loading JSON:', error));
-
-  // HTML Download
-  downloadButton.addEventListener('click', () => {
-    const clonedDoc = document.documentElement.cloneNode(true);
-
-    // Remove the back link and download buttons
-    clonedDoc.querySelector('a[href="index.html"]')?.remove();
-    clonedDoc.querySelector('#download')?.remove();
-    clonedDoc.querySelector('#download-pdf')?.remove();
-
-    const staticHTML = clonedDoc.outerHTML;
-    const blob = new Blob([staticHTML], { type: 'text/html' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'concordium.html';
-    a.click();
-  });
-
-  // PDF Download
-  pdfButton.addEventListener('click', () => {
-    const clonedDoc = document.documentElement.cloneNode(true);
-
-    // Remove the back link and download buttons
-    clonedDoc.querySelector('a[href="index.html"]')?.remove();
-    clonedDoc.querySelector('#download')?.remove();
-    clonedDoc.querySelector('#download-pdf')?.remove();
-
-    const iframe = document.createElement('iframe');
-    iframe.style.position = 'fixed';
-    iframe.style.width = '0';
-    iframe.style.height = '0';
-    document.body.appendChild(iframe);
-
-    iframe.contentDocument.open();
-    iframe.contentDocument.write(clonedDoc.outerHTML);
-    iframe.contentDocument.close();
-
-    iframe.onload = () => {
-      iframe.contentWindow.html2pdf().from(iframe.contentDocument.body).save('concordium.pdf');
-      iframe.remove();
-    };
-  });
 });
