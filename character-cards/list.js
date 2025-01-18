@@ -65,17 +65,36 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Error loading JSON:', error));
 
-  // Generate download link
-  document.getElementById('download').addEventListener('click', () => {
-    const staticHTML = document.documentElement.outerHTML;
-    const blob = new Blob([staticHTML], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
+  // Convert to PDF
+  document.getElementById('download-pdf').addEventListener('click', () => {
+    // Clone the document to avoid affecting the original page
+    const clonedDoc = document.documentElement.cloneNode(true);
 
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'concordium.html';
-    a.click();
+    // Remove the back link and download button
+    clonedDoc.querySelector('a[href="index.html"]')?.remove();
+    clonedDoc.querySelector('#download-pdf')?.remove();
 
-    URL.revokeObjectURL(url);
+    // Serialize the cleaned HTML
+    const staticHTML = clonedDoc.outerHTML;
+
+    // Create a hidden iframe to render the static HTML
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    document.body.appendChild(iframe);
+
+    iframe.contentDocument.open();
+    iframe.contentDocument.write(staticHTML);
+    iframe.contentDocument.close();
+
+    // Wait for the iframe content to load before generating the PDF
+    iframe.onload = () => {
+      const iframeWindow = iframe.contentWindow;
+      iframeWindow.html2pdf().from(iframe.contentDocument.body).save('concordium.pdf');
+
+      // Remove the iframe after generating the PDF
+      iframe.remove();
+    };
   });
 });
