@@ -74,7 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
     html2canvas(document.body, {
       onrendered: function (canvas) {
         const imgData = canvas.toDataURL('image/png');
-        doc.addImage(imgData, 'PNG', 10, 10);
+        
+        // Calculate the page size based on canvas dimensions
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+
+        // Scale the content to fit the page size
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+        const scaleX = pageWidth / canvasWidth;
+        const scaleY = pageHeight / canvasHeight;
+        const scale = Math.min(scaleX, scaleY); // Use the smallest scale to fit the page
+
+        const imgWidth = canvasWidth * scale;
+        const imgHeight = canvasHeight * scale;
+
+        // Add image to PDF with adjusted dimensions
+        doc.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
         doc.save('concordium.pdf'); // Save the PDF with the desired name
       }
     });
