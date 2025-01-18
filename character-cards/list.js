@@ -70,21 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Capture page content
-    const content = document.body.innerHTML;
-
-    // Remove unwanted elements like buttons (Download/Back)
-    const sanitizedContent = content.replace(/<button[^>]*>.*?<\/button>/g, '').replace(/<a[^>]*>.*?<\/a>/g, '');
-
-    // Add content to PDF without relying on dompurify
-    doc.html(sanitizedContent, {
-      callback: function (doc) {
-        doc.save('concordium.pdf'); // Save the PDF with the desired name
-      },
-      margin: [10, 10, 10, 10],
-      x: 10,
-      y: 10,
-      html2canvas: { scale: 2 }, // Optional, for better image quality in PDF
+    // Use html2canvas to capture the content of the page
+    html2canvas(document.body).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      doc.addImage(imgData, 'PNG', 10, 10);
+      doc.save('concordium.pdf'); // Save the PDF with the desired name
     });
   });
 });
