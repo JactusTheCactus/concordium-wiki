@@ -70,11 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Use html2canvas to capture the content of the page
-    html2canvas(document.body).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      doc.addImage(imgData, 'PNG', 10, 10);
-      doc.save('concordium.pdf'); // Save the PDF with the desired name
+    // Use html2canvas with callback instead of .then()
+    html2canvas(document.body, {
+      onrendered: function (canvas) {
+        const imgData = canvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 10, 10);
+        doc.save('concordium.pdf'); // Save the PDF with the desired name
+      }
     });
   });
 });
