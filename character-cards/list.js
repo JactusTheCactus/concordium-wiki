@@ -68,22 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Generate PDF on button click
   document.getElementById('download-pdf').addEventListener('click', () => {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF('p', 'mm', 'a4'); // Set A4 size (210mm x 297mm)
+    const doc = new jsPDF();
 
-    // Use html2canvas with proper scaling
+    // Use html2canvas with callback instead of .then()
     html2canvas(document.body, {
-      scale: 2, // Increase scale for higher resolution
-      useCORS: true, // Handle CORS for external images
-      scrollX: 0,
-      scrollY: -window.scrollY, // Fix scroll issues
-    }).then(canvas => {
-      // Set up PDF page size (A4 size is 210mm x 297mm)
-      const imgData = canvas.toDataURL('image/png');
-      const pdfWidth = 210; // A4 width in mm
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Scale to A4 height
-
-      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      doc.save('concordium.pdf'); // Save the PDF with the desired name
+      onrendered: function (canvas) {
+        const imgData = canvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 10, 10);
+        doc.save('concordium.pdf'); // Save the PDF with the desired name
+      }
     });
   });
 });
