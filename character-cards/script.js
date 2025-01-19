@@ -61,6 +61,11 @@ fetch('data.json')
           <li>${character.magic}: <u>The ${character.magic} of The ${character.animal}</u></li>
         `;
       }
+      if (character.aspect !== "") {
+        div.innerHTML += `
+          <li>${character.alignment}: ${character.aspect}</li>
+        `
+      }
       if (character.weapon !== "") {
       div.innerHTML += `
         <li>Weapon: <u>${character.weapon}</u></li>
