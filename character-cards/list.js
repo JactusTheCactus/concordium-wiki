@@ -35,7 +35,24 @@ fetch('data.json')
         team = "The Seven Heavenly Virtues";
       }
 
-      const job = character.rank === "Imperatore" ? `, <i>Captain of <i>${team}</i>` : "";
+      function role(character) {
+        const roles = {
+          "Imperatore": "Captain",
+          "Venatorium": "",
+          "Ferratorium": "Smith",
+          "Dominum": "",
+          "Luminorium": "Paladin",
+          "Exaltum": "",
+          "Bellatorium": "",
+        };
+        return roles[character.rank] || character.rank;
+      }
+      
+      var job = `, ${role(character)} of ${team}`;
+
+      if (role(character) === character.rank) {
+        job = ""
+      }
 
       function sex(character) {
         const rankMap = {
