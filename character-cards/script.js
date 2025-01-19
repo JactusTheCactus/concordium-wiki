@@ -24,14 +24,24 @@ fetch('data.json')
         if (rankMap[character.rank]) {return rankMap[character.rank][character.sex] || character.rank;}
         return character.rank;
       }
+      if (character.alignment === "Sin") {
+        character.magic = "Curse"
+      }
+      else if (character.alignment === "Virtue") {
+        character.magic = "Blessing"
+      }
       div.innerHTML = `
-        <h3>${character.name} ${sex(character)}, ${character.animal} ${character.alignment} of ${character.aspect}${job}</h3>
+        <h3>${character.name} ${sex(character)}, ${character.alignment} of ${character.aspect}${job}</h3>
       `;
       if (character.epithet !== "") {
       div.innerHTML += `
         <p><b>"${character.epithet}"</b></p>
       `;
-      }
+      }if (character.animal !== "") {
+        div.innerHTML += `
+          <li>${character.magic}: <u>The ${character.magic} of the ${character.animal}</u></li>
+        `;
+        }
       if (character.weapon !== "") {
       div.innerHTML += `
         <li>Weapon: <u>${character.weapon}</u></li>
