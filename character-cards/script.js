@@ -26,9 +26,6 @@ fetch('../concordium.json')
       }
       var job = `, ${role(character)} of ${team}`;
 
-      if (role(character) === character.rank) {
-        job = ""
-      }
       function sex(character) {
         const rankMap = {
           "Imperatore": { "F": "Imperatora", "M": "Imperator" },
