@@ -3,9 +3,10 @@ body {
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Align at the top of the page */
+    height: 100vh; /* Ensure full viewport height */
     margin: 0;
+    padding-top: 40px; /* Add space at the top of the page */
   }
   
   .card-container {
@@ -13,6 +14,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
+    max-width: 1200px; /* Optional: to limit card width */
+    width: 100%;
   }
   
   .card {
