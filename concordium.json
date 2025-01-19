@@ -29,7 +29,7 @@
     "weapon": "Battleaxe",
     "colour": "Purple",
     "power": "Power Absorption",
-    "species": "",
+    "species": "Tiefling",
     "speciesDef": "",
     "sex": "M",
     "rank": "Venatorium",
@@ -52,7 +52,7 @@
     "weapon": "Warhammer",
     "colour": "Green",
     "power": "Ferrokinesis",
-    "species": "",
+    "species": "Dwarf",
     "speciesDef": "",
     "sex": "M",
     "rank": "Ferratorium",
@@ -160,9 +160,32 @@
       "aln": -6
     }
   },
+  "patience": {
+    "name": "Patientia",
+    "animal": "Tortoise",
+    "aspect": "Patience",
+    "weapon": "",
+    "colour": "",
+    "power": "",
+    "species": "",
+    "speciesDef": "",
+    "sex": "M",
+    "rank": "Imperatore",
+    "alignment": "Virtue",
+    "inverse": "wrath",
+    "epithet": "",
+    "description": "",
+    "sasia": {
+      "str": 0,
+      "arc": 0,
+      "spd": 0,
+      "int": 0,
+      "aln": 6
+    }
+  },
   "charity": {
     "name": "Caritas",
-    "animal": "",
+    "animal": "Elephant",
     "aspect": "Charity",
     "weapon": "",
     "colour": "",
@@ -185,7 +208,7 @@
   },
   "chastity": {
     "name": "Castitas",
-    "animal": "",
+    "animal": "Swan",
     "aspect": "Chastity",
     "weapon": "",
     "colour": "",
@@ -208,7 +231,7 @@
   },
   "diligence": {
     "name": "Diligentia",
-    "animal": "",
+    "animal": "Ant",
     "aspect": "Diligence",
     "weapon": "",
     "colour": "",
@@ -231,7 +254,7 @@
   },
   "kindness": {
     "name": "Humanitas",
-    "animal": "",
+    "animal": "Dog",
     "aspect": "Kindness",
     "weapon": "",
     "colour": "",
@@ -254,7 +277,7 @@
   },
   "humility": {
     "name": "Humilitas",
-    "animal": "",
+    "animal": "Deer",
     "aspect": "Humility",
     "weapon": "",
     "colour": "",
@@ -275,32 +298,9 @@
       "aln": 6
     }
   },
-  "patience": {
-    "name": "Patientia",
-    "animal": "",
-    "aspect": "Patience",
-    "weapon": "",
-    "colour": "",
-    "power": "",
-    "species": "",
-    "speciesDef": "",
-    "sex": "M",
-    "rank": "Imperatore",
-    "alignment": "Virtue",
-    "inverse": "wrath",
-    "epithet": "",
-    "description": "",
-    "sasia": {
-      "str": 0,
-      "arc": 0,
-      "spd": 0,
-      "int": 0,
-      "aln": 6
-    }
-  },
   "temperance": {
     "name": "Temperantia",
-    "animal": "",
+    "animal": "Horse",
     "aspect": "Temperance",
     "weapon": "",
     "colour": "",
