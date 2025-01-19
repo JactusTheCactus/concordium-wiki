@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Card header
         const header = document.createElement('div');
         header.classList.add('card-header');
-        header.textContent = character.name;
+        header.textContent = `${character.name} ${character.rank}`;
         card.appendChild(header);
         
         // Card body
@@ -23,12 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Add character details to the body
         body.innerHTML = `
-          <div class="attribute"><strong>Aspect:</strong> ${character.aspect}</div>
-          <div class="attribute"><strong>Weapon:</strong> ${character.weapon}</div>
-          <div class="attribute"><strong>Species:</strong> ${character.species}</div>
-          <div class="attribute"><strong>Power:</strong> ${character.power}</div>
-          <div class="attribute"><strong>Rank:</strong> ${character.rank}</div>
-          <div class="attribute"><strong>Alignment:</strong> ${character.alignment}</div>
+          <div class="attribute">Aspect: ${character.aspect}</div>
+          <div class="attribute">Weapon: ${character.weapon}</div>
+          <div class="attribute">Species: ${character.species}</div>
+          <div class="attribute">Power: ${character.power}</div>
+          <div class="attribute">Alignment: ${character.alignment}</div>
         `;
         card.appendChild(body);
         
