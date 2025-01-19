@@ -41,8 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
         var sex_ = sex(character)
         var role_ = role(character)
 
-        function addattribute(attribute,yn,label) {
-          if (yn === `y`) {
+        function addattribute(attribute,label) {
+          if (label === `description`) {
+            if (character.description !== "") {
+              body.innerHTML += `
+                <br><div class="atribute">${attribute}</div>
+              `
+            }
+          }
+          else if (label !== undefined) {
             body.innerHTML += `
               <div class="atribute">${label}: <b>${attribute}</div>
             `
@@ -56,9 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (character.alignment === "Sin") {
           team = `The Seven Deadly Sins`
+          magic = `Curse`
         }
         else if (character.alignment === "Virtue") {
           team = `The Seven Heavenly Virtues`
+          magic = `Blessing`
         }
 
         // Card header
@@ -73,18 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Add character details to the body
         body.innerHTML = ``
-        addattribute(`${role_} of ${team}`,`n`)
-        addattribute(character.aspect,`y`,`Aspect`)
-        addattribute(character.weapon,`y`,`Weapon`)
-        addattribute(character.species,`y`,`Species`)
-        addattribute(character.power,`y`,`Power`)
+        addattribute(`${role_} of ${team}`)
+        addattribute(`The ${magic} of The ${character.animal}`,magic)
+        addattribute(character.aspect,character.alignment)
+        addattribute(character.weapon,`Weapon`)
+        addattribute(character.colour,`Gear Colour`)
+        addattribute(character.species,`Species`)
+        addattribute(character.power,`Power`)
+        addattribute(character.inverse,`Inverse`)
+        addattribute(character.description,`description`)
         card.appendChild(body);
-        
-        // Card footer
-        const footer = document.createElement('div');
-        footer.classList.add('card-footer');
-        footer.textContent = `Inverse: ${character.inverse}`;
-        card.appendChild(footer);
 
         // Append the card to the container
         container.appendChild(card);
