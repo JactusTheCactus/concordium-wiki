@@ -1,54 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align at the top of the page */
-    height: 100vh; /* Ensure full viewport height */
-    margin: 0;
-    padding-top: 40px; /* Add space at the top of the page */
-  }
-  
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px; /* Optional: to limit card width */
-    width: 100%;
-  }
-  
-  .card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 200px;
-  }
-  
-  .card-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .card-body {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .card-body .attribute {
-    margin-bottom: 5px;
-  }
-  
-  .card-footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.8em;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align at the top of the page */
+  height: 100vh; /* Ensure full viewport height */
+  margin: 0;
+  padding-top: 40px; /* Add space at the top of the page */
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px; /* Optional: to limit card width */
+  width: 100%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px;
+}
+
+.card-header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-body .attribute {
+  margin-bottom: 5px;
+}
+
+.card-footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+}
