@@ -38,12 +38,12 @@ fetch('data.json')
       function role(character) {
         const roles = {
           "Imperatore": "Captain",
-          "Venatorium": "",
+          "Venatorium": "Hunter",
           "Ferratorium": "Smith",
-          "Dominum": "",
-          "Luminorium": "Paladin",
-          "Exaltum": "",
-          "Bellatorium": "",
+          "Dominum": "Warden",
+          "Luminorium": "Seer",
+          "Exaltum": "Champion",
+          "Bellatorium": "Warlord",
         };
         return roles[character.rank] || character.rank;
       }
