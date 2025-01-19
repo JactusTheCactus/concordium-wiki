@@ -49,7 +49,7 @@ fetch('data.json')
         character.magic = "Blessing"
       }
       div.innerHTML = `
-        <h3>${character.name} ${sex(character)}, ${character.alignment} of ${character.aspect}${job}</h3>
+        <h3>${character.name} ${sex(character)}${job}</h3>
       `;
       if (character.epithet !== "") {
       div.innerHTML += `
