@@ -1,15 +1,18 @@
+const descriptionElement = document.getElementById("description");
+descriptionElement.innerHTML = `<p>
+  <b>The Concordium</b> was a group of 14 <i>Holy Knights</i>, directly serving the King. 7 of these Holy Knights betrayed the others, framing them for <i>high treason against the kingdom</i>, and sentencing them for a millenium. With this sentencing, the betrayed Holy Knights, now called <b>The Seven Deadly Sins</b>, were further punished with <b>The Capital Curses</b>, from <i>The Blood of The Dead Gods</i>. The other half of <b>The Concordium</b> called themselves <b>The Seven Heavenly Virtues</b>, and continued selling their false tale of the Sins' betrayal.
+</p>`;
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
     const pairsContainer = document.getElementById('pairs-container');
-    const processed = new Set(); // Keep track of processed characters
-    // Function to create a character div
+    const processed = new Set();
     function createCharacterDiv(character, type) {
       const div = document.createElement('div');
       div.classList.add(type); // 'sin' or 'virtue'
       if (character.alignment === "Sin") {team = `The Seven Deadly Sins`}
       else if (character.alignment === "Virtue") {team = `The Seven Heavenly Virtues`}
-      if (character.rank === "Imperatore") {job = `, Captain of <u>${team}</u>`}
+      if (character.rank === "Imperatore") {job = `, Captain of <i>${team}</i>`}
       else {job = ""}
       function sex(character) {
         const rankMap = {
@@ -37,11 +40,12 @@ fetch('data.json')
       div.innerHTML += `
         <p><b>"${character.epithet}"</b></p>
       `;
-      }if (character.animal !== "") {
+      }
+      if (character.animal !== "") {
         div.innerHTML += `
-          <li>${character.magic}: <u>The ${character.magic} of the ${character.animal}</u></li>
+          <li>${character.magic}: <u>The ${character.magic} of The ${character.animal}</u></li>
         `;
-        }
+      }
       if (character.weapon !== "") {
       div.innerHTML += `
         <li>Weapon: <u>${character.weapon}</u></li>
