@@ -15,7 +15,7 @@ const descriptionElement = document.getElementById("description");
 descriptionElement.innerHTML = `<p>
   <b>The Concordium</b> was a group of 14 <i>Holy Knights</i>, directly serving the King. 7 of these Holy Knights betrayed the others, framing them for <i>high treason against the kingdom</i>, and sentencing them for a millenium. With this sentencing, the betrayed Holy Knights, now called <b>The Seven Deadly Sins</b>, were further punished with <b>The Capital Curses</b>, from <i>The Blood of The Dead Gods</i>. The other half of <b>The Concordium</b> called themselves <b>The Seven Heavenly Virtues</b>, and continued selling their false tale of the Sins' betrayal.
 </p>`;
-fetch('data.json')
+fetch('../concordium.json')
   .then(response => response.json())
   .then(data => {
     const sinsList = document.getElementById('sins-list');
