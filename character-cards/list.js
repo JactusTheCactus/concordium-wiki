@@ -27,6 +27,7 @@ fetch('data.json')
     // Separate captains from non-captains
     Object.values(data).forEach(character => {
       const div = document.createElement('div');
+      div.alignment = character.alignment
       let team = "";
       if (character.alignment === "Sin") {
         team = "The Seven Deadly Sins";
@@ -34,7 +35,7 @@ fetch('data.json')
         team = "The Seven Heavenly Virtues";
       }
 
-      const job = character.rank === "Imperatore" ? `, <i>Captain of ${team}</i>` : "";
+      const job = character.rank === "Imperatore" ? `, <i>Captain of <i>${team}</i>` : "";
 
       function sex(character) {
         const rankMap = {
@@ -55,7 +56,7 @@ fetch('data.json')
         character.magic = "Blessing"
       }
       div.innerHTML = `
-        <h3>${character.name} ${sex(character)}, ${character.alignment} of ${character.aspect} ${job}</h3>
+        <h3>${character.name} ${sex(character)}${job}</h3>
       `;
       if (character.epithet !== "") {
         div.innerHTML += `<p><b>"${character.epithet}"</b></p>`;
@@ -99,19 +100,19 @@ fetch('data.json')
 
     // Append captains first, then the non-captains
     captains.forEach(div => {
-      if (div.querySelector('h3').innerText.includes("Sin")) {
+      if (div.alignment === "Sin") {
         sinsList.appendChild(div);
       } else {
         virtuesList.appendChild(div);
       }
     });
-
+    
     nonCaptains.forEach(div => {
-      if (div.querySelector('h3').innerText.includes("Sin")) {
+      if (div.alignment === "Sin") {
         sinsList.appendChild(div);
       } else {
         virtuesList.appendChild(div);
       }
-    });
+    });    
   })
   .catch(error => console.error('Error loading JSON:', error));

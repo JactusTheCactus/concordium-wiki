@@ -160,6 +160,29 @@
       "aln": -6
     }
   },
+  "patience": {
+    "name": "Patientia",
+    "animal": "",
+    "aspect": "Patience",
+    "weapon": "",
+    "colour": "",
+    "power": "",
+    "species": "",
+    "speciesDef": "",
+    "sex": "M",
+    "rank": "Imperatore",
+    "alignment": "Virtue",
+    "inverse": "wrath",
+    "epithet": "",
+    "description": "",
+    "sasia": {
+      "str": 0,
+      "arc": 0,
+      "spd": 0,
+      "int": 0,
+      "aln": 6
+    }
+  },
   "charity": {
     "name": "Caritas",
     "animal": "",
@@ -265,29 +288,6 @@
     "rank": "Exaltum",
     "alignment": "Virtue",
     "inverse": "pride",
-    "epithet": "",
-    "description": "",
-    "sasia": {
-      "str": 0,
-      "arc": 0,
-      "spd": 0,
-      "int": 0,
-      "aln": 6
-    }
-  },
-  "patience": {
-    "name": "Patientia",
-    "animal": "",
-    "aspect": "Patience",
-    "weapon": "",
-    "colour": "",
-    "power": "",
-    "species": "",
-    "speciesDef": "",
-    "sex": "M",
-    "rank": "Imperatore",
-    "alignment": "Virtue",
-    "inverse": "wrath",
     "epithet": "",
     "description": "",
     "sasia": {
