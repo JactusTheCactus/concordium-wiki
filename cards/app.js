@@ -97,5 +97,4 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(card);
       });
     })
-    .catch(error => console.error('Error loading the JSON data:', error));
 });
