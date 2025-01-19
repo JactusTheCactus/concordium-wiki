@@ -5,7 +5,7 @@ function downloadPDF() {
   // Use html2pdf to generate PDF from the content with the styles intact
   html2pdf()
     .from(element)
-    .save('the_concordium.pdf');
+    .save('concordium.pdf');
 }
 
 // Find the element by ID
