@@ -23,15 +23,14 @@ def sasiainput(stat,lower,upper):
   number = int(input(f"Please input {stat} stat(min: {lower}; max: {upper}): "))
   while not lower <= number <= upper:
     number = int(input(f"Try again(min: {lower}; max: {upper}): "))
-  if number == 0:
-      number = 1
+    if number == 0: number = 1
   return number
-strength = sasiainput("STR",0,12)
-arcane = sasiainput("ARC",0,12)
-speed = sasiainput("SPD",0,12)
-intelligence = sasiainput("INT",0,12)
+strength = sasiainput("STR",1,12)
+arcane = sasiainput("ARC",1,12)
+speed = sasiainput("SPD",1,12)
+intelligence = sasiainput("INT",1,12)
 alignment = sasiainput("ALN",-6,6)
 powerLevel = int(abs(strength * arcane * speed * intelligence * alignment))
 powerLevel = format_base36(powerLevel)
 print()
-print(f"Your Power Level on the S.A.S.I.A. Scale is: <|{powerLevel}|> Strata")
+print(f"Your Power Level on the S.A.S.I.A. Scale is: {powerLevel} Strata")
