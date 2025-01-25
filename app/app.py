@@ -1,4 +1,6 @@
-# cd app; pyinstaller --onefile --windowed --add-data "../concordium.json:." --name="ConcordiumWiki" --distpath="" app.py
+"""
+cd app; pyinstaller --onefile --windowed --add-data "../concordium.json:." --name="ConcordiumWiki" --distpath="" app.py
+"""
 
 import tkinter as tk
 import json
@@ -26,16 +28,16 @@ with open(json_path, "r") as file:
     characters = json.load(file)
 
 def update_wraplength(event, label_widget):
-    """Update the wraplength of a label widget based on window width."""
+    # Update the wraplength of a label widget based on window width.
     new_wraplength = event.width * 0.9  # 90% of the window width
     label_widget.config(wraplength=new_wraplength)
 
 def get_font_size(screen_height):
-    """Calculate font size based on screen height."""
+    # Calculate font size based on screen height.
     return int(screen_height * 0.02)  # % of the screen height
 
 def display_character(data):
-    """Display character details in a new window."""
+    # Display character details in a new window.
     info = ""
     char = characters[data]
     magic = "Curse" if char['alignment'] == "Sin" else "Blessing"
