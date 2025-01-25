@@ -3,6 +3,7 @@ cd app; pyinstaller --onefile --windowed --add-data "../concordium.json:." --nam
 """
 
 import tkinter as tk
+import ttkbootstrap as ttk  # Install with: pip install ttkbootstrap
 import json
 import os
 import sys
@@ -113,6 +114,7 @@ def display_character(data):
     screen_width = detail_window.winfo_screenwidth()
     screen_height = detail_window.winfo_screenheight()
     detail_window.geometry(f"{screen_width}x{screen_height}+0+0")
+    detail_window.state('zoomed')
 
     # Calculate font size based on screen height
     font_size = get_font_size(screen_height)
@@ -124,39 +126,78 @@ def display_character(data):
     # Bind the resize event to update wraplength
     detail_window.bind("<Configure>", lambda event: update_wraplength(event, label_widget))
 
-# Main application window
-root = tk.Tk()
+# Initialize the main application window
+root = ttk.Window(themename="darkly")  # Choose a theme like 'darkly', 'lumen', etc.
 root.title("Concordium Wiki")
 
 # Set window size to screen dimensions
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}+0+0")
+root.state('zoomed')
 
-# Calculate font size based on screen height
-font_size = get_font_size(screen_height)
+# Define global style configurations
+font_size = int(screen_height * 0.02)
+header_font = ("Verdana", 2 * font_size)
+button_font = ("Verdana", font_size)
+label_font = ("Verdana", font_size)
+bg_color = root.style.colors.primary  # Use primary theme color for background
 
-# Title label
-tk.Label(root, text="Concordium Wiki", font=("Verdana", 2 * font_size)).pack(pady=10)
+# Create a styled title label
+title_label = ttk.Label(root, text="Concordium Wiki", font=header_font, anchor="center")
+title_label.pack(pady=20)
 
-# Create frames for Sins and Virtues
-sins_frame = tk.Frame(root)
-sins_frame.pack(side="left", padx=20)
+colour = {
+  "red":"#ff0000",
+  "orange":"#ff8800",
+  "yellow":"#ffff00",
+  "green":"#00ff00",
+  "blue":"#0000ff",
+  "purple":"#ff00ff"
+}
 
-virtues_frame = tk.Frame(root)
-virtues_frame.pack(side="right", padx=20)
+# Define a custom style for the buttons
+style = ttk.Style()
+style.configure("Custom.TButton", font=button_font)
+
+style.configure("red.TFrame", background=colour["red"], relief="raised", borderwidth=5)
+style.configure("orange.TFrame", background=colour["orange"], relief="raised", borderwidth=5)
+style.configure("yellow.TFrame", background=colour["yellow"], relief="raised", borderwidth=5)
+style.configure("green.TFrame", background=colour["green"], relief="raised", borderwidth=5)
+style.configure("blue.TFrame", background=colour["blue"], relief="raised", borderwidth=5)
+style.configure("purple.TFrame", background=colour["purple"], relief="raised", borderwidth=5)
+
+# Frames for Sins and Virtues
+frame_style = {"padding": 10, "relief": "solid", "borderwidth": 2}
+sins_frame = ttk.Frame(root, style="red.TFrame", **frame_style)
+sins_frame.pack(side="left", padx=20, fill="y")
+
+virtues_frame = ttk.Frame(root, style="blue.TFrame", **frame_style)
+virtues_frame.pack(side="right", padx=20, fill="y")
+
 
 # Generate buttons for Sins
 sins = [char for char in characters if characters[char]['alignment'] == "Sin"]
 for sin in sins:
-    button = tk.Button(sins_frame, text=characters[sin]['aspect'], command=lambda char=sin: display_character(char), font=("Verdana", font_size))
+    button = ttk.Button(
+        sins_frame,
+        text=characters[sin]['aspect'],
+        command=lambda char=sin: display_character(char),
+        style="Custom.TButton",  # Apply the custom style
+    )
     button.pack(pady=5, padx=10)
 
 # Generate buttons for Virtues
 virtues = [char for char in characters if characters[char]['alignment'] == "Virtue"]
 for virtue in virtues:
-    button = tk.Button(virtues_frame, text=characters[virtue]['aspect'], command=lambda char=virtue: display_character(char), font=("Verdana", font_size))
+    button = ttk.Button(
+        virtues_frame,
+        text=characters[virtue]['aspect'],
+        command=lambda char=virtue: display_character(char),
+        style="Custom.TButton",  # Apply the custom style
+    )
     button.pack(pady=5, padx=10)
+
 
 # Start the main event loop
 root.mainloop()
