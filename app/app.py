@@ -1,9 +1,28 @@
+# cd app; pyinstaller --onefile --windowed --add-data "../concordium.json:." --name="ConcordiumWiki" --distpath="" app.py
+
 import tkinter as tk
 import json
+import os
+import sys
 
-# pyinstaller --onefile --windowed --add-data "../concordium.json;." --name="ConcordiumWiki" --distpath="" app.py
+# Determine the path to the parent directory
+if getattr(sys, 'frozen', False):
+    # If running as an executable, use the directory of the executable
+    app_path = os.path.dirname(sys.executable)
+else:
+    # If running in a normal Python environment, use the directory of the script
+    app_path = os.path.dirname(__file__)
 
-with open("./concordium.json", "r") as file:
+# Navigate to the parent directory
+parent_dir = os.path.dirname(app_path)
+
+# Construct the path to concordium.json in the parent directory
+json_path = os.path.join(parent_dir, 'concordium.json')
+
+with open(json_path, "r") as file:
+    characters = json.load(file)
+
+with open(json_path, "r") as file:
     characters = json.load(file)
 
 def update_wraplength(event, label_widget):
