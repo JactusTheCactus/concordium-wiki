@@ -80,9 +80,9 @@ def display_character(data):
     # Build the info string
     insert(char['name'])
     insert(gender(char['rank'], char['sex']), " ", "\n")
-    insert(job(char), "", f" of {team(char)}\n\n")
+    insert(job(char), "", f" of {team(char)}\n")
+    insert(char['animal'], f"{magic} of The ", "\n\n")
     insert(char['aspect'], f"{char['alignment']}: ", "\n")
-    insert(char['animal'], f"{magic}: {magic} of The ", "\n")
     insert(char['weapon'], "Weapon: ", "\n")
     insert(char['colour'], "Gear Colour: ", "\n")
     insert(char['power'], "Power: ", "\n")
