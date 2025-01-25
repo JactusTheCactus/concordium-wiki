@@ -1,6 +1,8 @@
 import tkinter as tk
 import json
 
+# pyinstaller --onefile --windowed --add-data "../concordium.json;." --name="ConcordiumWiki" --distpath="app" app.py
+
 with open("./concordium.json", "r") as file:
     characters = json.load(file)
 
