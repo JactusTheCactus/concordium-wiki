@@ -21,25 +21,46 @@ def display_character(data):
 
     def gender(rank, sex):
         rank_map = {
-            "Imperatore": {"F": "Imperatora", "M": "Imperator"},
-            "Venatorium": {"F": "Venatrix", "M": "Venator"},
-            "Ferratorium": {"F": "Ferratrix", "M": "Ferrator"},
-            "Dominum": {"F": "Domina", "M": "Dominus"},
-            "Luminorium": {"F": "Luminora", "M": "Luminor"},
-            "Exaltum": {"F": "Exalta", "M": "Exaltus"},
-            "Bellatorium": {"F": "Bellatrix", "M": "Bellator"},
+          "Imperatore": {"F": "Imperatora", "M": "Imperator"},
+          "Venatorium": {"F": "Venatrix", "M": "Venator"},
+          "Ferratorium": {"F": "Ferratrix", "M": "Ferrator"},
+          "Dominum": {"F": "Domina", "M": "Dominus"},
+          "Luminorium": {"F": "Luminora", "M": "Luminor"},
+          "Exaltum": {"F": "Exalta", "M": "Exaltus"},
+          "Bellatorium": {"F": "Bellatrix", "M": "Bellator"},
         }
         return rank_map.get(rank, {}).get(sex, rank)
+    
+    def job(char):
+      roles = {
+        "Imperatore": "Captain",
+        "Venatorium": "Hunter",
+        "Ferratorium": "Smith",
+        "Dominum": "Warden",
+        "Luminorium": "Seer",
+        "Exaltum": "Champion",
+        "Bellatorium": "Warlord",
+      }
+      return f"{roles.get(char['rank'], char['rank'])}"
+    
+    def team(char):
+      teams = {
+        "Sin": "The Seven Deadly Sins",
+        "Virtue": "The Seven Heavenly Virtues"
+      }
+      return f"{teams.get(char['alignment'], char['alignment'])}"
 
     # Append content to `info`
     def insert(text, prefix="", suffix=""):
-        nonlocal info
-        if text:
-            info += f"{prefix}{text}{suffix}"
+      nonlocal info
+      if text:
+        info += f"{prefix}{text}{suffix}"
 
     # Build the info string
     insert(char['name'])
-    insert(gender(char['rank'], char['sex']), " ", "\n\n")
+    insert(gender(char['rank'], char['sex']), " ", "\n")
+    insert(job(char), "", f" of {team(char)}\n\n")
+    insert(char['aspect'], f"{char['alignment']}: ", "\n")
     insert(char['animal'], f"{magic}: {magic} of The ", "\n")
     insert(char['weapon'], "Weapon: ", "\n")
     insert(char['colour'], "Gear Colour: ", "\n")
@@ -49,12 +70,16 @@ def display_character(data):
 
     def fullname(char):
       def ifnone(text,prefix="",suffix=""):
-          if text is not None: return f"{prefix}{text}{suffix}"
+        if text is not None:
+          return f"{prefix}{text}{suffix}"
+        else:
+          return ""
       full = ifnone(char['name'])
       full += ifnone(gender(char['rank'],char['sex'])," ",", ")
       full += ifnone(char['animal'])
       full += ifnone(char['alignment']," ")
       full += ifnone(char['aspect']," of ")
+      full += ifnone(job(char),", ",f" of {team(char)}")
       return full
 
     # Create a new window for character details
