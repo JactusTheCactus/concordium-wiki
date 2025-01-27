@@ -5,21 +5,28 @@ __The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 
 ### Patientia Imperator
 - __Blessing__: The Blessing of the Blue Tortoise
 - __Virtue__: Patience
+- __Power__: Time-Slowing
 ### Caritas Ferratrix
 - __Blessing__: The Blessing of the Orange Elephant
 - __Virtue__: Charity
+- __Power__: Healing
 ### Castitas Bellator
 - __Blessing__: The Blessing of the Pink Swan
 - __Virtue__: Chastity
+- __Power__: Disease/Poison Immunity
 ### Diligentia Venator
 - __Blessing__: The Blessing of the Red Ant
 - __Virtue__: Diligence
+- __Power__: Hyper-Sensitive Senses
 ### Humanitas Luminora
 - __Blessing__: The Blessing of the Green Dog
 - __Virtue__: Kindness
+- __Power__: Invulnerability
 ### Humilitas Exaltus
 - __Blessing__: The Blessing of the Purple Deer
 - __Virtue__: Humility
+- __Power__: Invisibility
 ### Temperantia Domina
 - __Blessing__: The Blessing of the Yellow Horse
 - __Virtue__: Temperance
+- __Power__: Resistance to Temptation

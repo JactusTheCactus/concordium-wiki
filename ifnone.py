@@ -6,22 +6,22 @@ with open('concordium.json', 'r') as file:
 
 list = [
     "weapon",
-    "power",
     "species"
 ]
 output = ""
 # Iterate through each character and their attributes
 for character, attributes in data.items():
     if data[character]['alignment'] == "Virtue":
-        output += f"""# {character.capitalize()}
-"""
+        output += f"""
+
+__{character.capitalize()}__"""
         for attribute, value in attributes.items():
             if attribute in list:
-                output += f"""  - __{attribute.capitalize()}__
-"""
+                output += f"""
+  - {attribute.capitalize()}"""
                 if value != "":
-                    output += f"""    - _{value.capitalize()}_
-"""
+                    output += f"""
+    - _{value.capitalize()}_"""
 
 with open("output.md","w") as file:
     file.write(output)
