@@ -5,7 +5,10 @@ def ifNone(item,label):
     global alignment
     if item != "":
         newLabel = f"__{label}__"
-        if label == "Description" or label == "Species Definition":
+        if label in [
+            "Description",
+            "Definition"
+        ]:
             out = f"""- {newLabel}:
     - {item}
 """
@@ -34,19 +37,13 @@ for key, value in data.items():
     name = value.get("name", "")
     animal = value.get("animal", "")
     aspect = value.get("aspect", "")
-    ifWeapon = ifNone(value.get("weapon", ""),"Weapon")
     colour = value.get("colour", "")
-    ifPower = ifNone(value.get("power", ""),"Power")
     species = value.get("species","")
-    ifSpecies = ifNone(species,"Species")
-    speciesDef = ifNone(value.get("speciesDef", ""), "Species Definition")
     sex = value.get("sex", "")
     rank = value.get("rank", "")
     alignment = value.get("alignment", "")
-    if alignment == "Sin": mark = "Curse"
-    elif alignment == "Virtue": mark = "Blessing"
-    ifEpithet = ifNone(value.get("epithet", ""),"Epithet")
-    ifDescription = ifNone(value.get("description", ""),"Description")
+    if alignment == "Sin": edict = "Curse"
+    elif alignment == "Virtue": edict = "Blessing"
 
     def gender(rank, sex):
         rank_map = {
@@ -64,14 +61,15 @@ for key, value in data.items():
     title = f"""### {name} {gender(rank,sex)}
 """
     output = title
-    output += ifEpithet
-    output += ifNone(f"The {mark} of the {colour} {animal}",mark)
+    output += ifNone(value.get("epithet", ""),"Epithet")
+    output += ifNone(f"The {edict} of the {colour} {animal}",edict)
+    output += ifNone(value.get("edictDef", ""), "Definition")
     output += ifNone(aspect,alignment)
-    output += ifWeapon
-    output += ifPower
-    output += ifSpecies
-    output += speciesDef
-    output += ifDescription
+    output += ifNone(value.get("weapon", ""),"Weapon")
+    output += ifNone(value.get("power", ""),"Power")
+    output += ifNone(species,"Species")
+    output += ifNone(value.get("speciesDef", ""), "Definition")
+    output += ifNone(value.get("description", ""),"Description")
     if alignment == "Sin":
         if firstSin:
             sinMD += sinTitle
@@ -89,9 +87,9 @@ sinMD = f"""{docTitle}
 {sinMD}"""
 virtueMD = f"""{docTitle}
 {virtueMD}"""
-with open('markdown/sin.md', 'w') as md_file:
-    md_file.write(sinMD)
-with open('markdown/virtue.md', 'w') as md_file:
-    md_file.write(virtueMD)
-with open('README.md', 'w') as md_file:
-    md_file.write(concordiumMD)
+with open('markdown/sin.md', 'w') as file:
+    file.write(sinMD)
+with open('markdown/virtue.md', 'w') as file:
+    file.write(virtueMD)
+with open('README.md', 'w') as file:
+    file.write(concordiumMD)

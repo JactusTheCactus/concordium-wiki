@@ -13,6 +13,7 @@
     "inverse": "kindness",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -35,6 +36,7 @@
     "inverse": "temperance",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -57,6 +59,7 @@
     "inverse": "charity",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -79,6 +82,7 @@
     "inverse": "chastity",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -101,6 +105,7 @@
     "inverse": "humility",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -123,6 +128,7 @@
     "inverse": "diligence",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -145,6 +151,7 @@
     "inverse": "patience",
     "epithet": "The Chainbreaker",
     "description": "Growing up under the boot of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath for a thousand years, then being cursed with The Curse of The Kraken upon her release, she sought to find every abuser of power and reduce them to little more than a crater in the ground.\n\n    Extra Details:\n    - Beheaded Ouroboros Tattoo",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -167,6 +174,7 @@
     "inverse": "wrath",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -189,6 +197,7 @@
     "inverse": "greed",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -211,6 +220,7 @@
     "inverse": "lust",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -233,6 +243,7 @@
     "inverse": "sloth",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -255,6 +266,7 @@
     "inverse": "envy",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -277,6 +289,7 @@
     "inverse": "pride",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
@@ -299,6 +312,7 @@
     "inverse": "gluttony",
     "epithet": "",
     "description": "",
+    "edictDef": "",
     "sasia": {
       "str": 0,
       "arc": 0,
