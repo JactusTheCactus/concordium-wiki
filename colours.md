@@ -1,0 +1,7 @@
+- [ ]pink
+- [ ]red
+- [ ]orange
+- [ ]yellow
+- [ ]green
+- [x]blue
+- [ ]purple
