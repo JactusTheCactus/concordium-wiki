@@ -13,8 +13,7 @@ output = ""
 # Iterate through each character and their attributes
 for character, attributes in data.items():
     if data[character]['alignment'] == "Virtue":
-        output += f"""
-# {character.capitalize()}
+        output += f"""# {character.capitalize()}
 """
         for attribute, value in attributes.items():
             if attribute in list:
