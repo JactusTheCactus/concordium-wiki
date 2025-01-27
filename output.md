@@ -1,0 +1,35 @@
+
+# Patience
+  - __Weapon__
+  - __Power__
+  - __Species__
+
+# Charity
+  - __Weapon__
+  - __Power__
+  - __Species__
+
+# Chastity
+  - __Weapon__
+  - __Power__
+  - __Species__
+
+# Diligence
+  - __Weapon__
+  - __Power__
+  - __Species__
+
+# Kindness
+  - __Weapon__
+  - __Power__
+  - __Species__
+
+# Humility
+  - __Weapon__
+  - __Power__
+  - __Species__
+
+# Temperance
+  - __Weapon__
+  - __Power__
+  - __Species__

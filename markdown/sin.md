@@ -13,11 +13,13 @@ __The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 
 - __Sin__: Gluttony
 - __Weapon__: Battleaxe
 - __Power__: Power Absorption
+- __Species__: Tiefling
 ### Avaritia Ferrator
 - __Curse__: The Curse of the Green Dragon
 - __Sin__: Greed
 - __Weapon__: Warhammer
 - __Power__: Ferrokinesis
+- __Species__: Dwarf
 ### Luxuria Domina
 - __Curse__: The Curse of the Pink Siren
 - __Sin__: Lust
@@ -42,5 +44,9 @@ __The Concordium__ was a group of 14 _Holy Knights_, directly serving the King. 
 - __Sin__: Wrath
 - __Weapon__: Chain-Whip
 - __Power__: Strength
+- __Species__: Werewolf
 - __Description__:
     - Growing up under the boot of all those more fortunate than her, Ira developed a strong sense of justice and an intense hatred for injustice and abuse of power. After being sentenced as the Sin of Wrath for a thousand years, then being cursed with The Curse of The Kraken upon her release, she sought to find every abuser of power and reduce them to little more than a crater in the ground.
+
+Extra Details:
+- Beheaded Ouroboros Tattoo

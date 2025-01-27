@@ -90,7 +90,7 @@ def display_character(data):
     insert(char['colour'], "Gear Colour: ", "\n")
     insert(char['power'], "Power: ", "\n")
     insert(char['species'], "Species: ", "\n")
-    insert(char['description'], "\n")
+    insert(char['description'], "\nDescription:\n")
 
     def fullname(char):
       def ifnone(text,prefix="",suffix=""):
